@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI4BNT - Artificial Intelligence Lab for Brain Network Therapeutics</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Top Horizontal Navigation -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">AI LAB FOR NETWORK THERAPEUTICS</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" onclick="smoothScroll(event)">HOME</a></li>
+                <li><a href="#career" onclick="smoothScroll(event)">CAREER</a></li>
+                <li><a href="#research" onclick="smoothScroll(event)">RESEARCH</a></li>
+                <li><a href="#publications" onclick="smoothScroll(event)">PUBLICATION</a></li>
+                <li><a href="#software" onclick="smoothScroll(event)">SOFTWARE</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="togglePeopleDropdown(event)">PEOPLE ▼</a>
+                    <div class="dropdown-content" id="peopleNavDropdown">
+                        <div class="people-nav-section">
+                            <a href="#pi-section" onclick="closeDropdowns(); smoothScroll(event)">Principle Investigator</a>
+                            <a href="#research-fellows-section" onclick="closeDropdowns(); smoothScroll(event)">Research Fellows</a>
+                            <a href="#doctoral-fellows-section" onclick="closeDropdowns(); smoothScroll(event)">Doctoral Fellows</a>
+                            <a href="#research-interns-section" onclick="closeDropdowns(); smoothScroll(event)">Research Interns</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#news" onclick="smoothScroll(event)">NEWS</a></li>
+                <li><a href="#contact" onclick="smoothScroll(event)">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Image Slider -->
+    <section class="hero" id="home">
+        <!-- Image Slider Background -->
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <img src="LAB/8.jpg" alt="Lab 8" class="slider-image active">
+                <img src="LAB/1.jpg" alt="Lab 1" class="slider-image">
+                <img src="LAB/2.jpg" alt="Lab 2" class="slider-image">
+                <img src="LAB/3.jpg" alt="Lab 3" class="slider-image">
+                <img src="LAB/4.jpg" alt="Lab 4" class="slider-image">
+                <!-- Convert 5.tif / 6.tif / 7.tif to JPG/PNG and use them here -->
+                <img src="LAB/5.jpg" alt="Lab 5" class="slider-image">
+                <img src="LAB/6.jpg" alt="Lab 6" class="slider-image">
+                <img src="LAB/7.jpg" alt="Lab 7" class="slider-image">
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+
+        <canvas id="brainCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
+        <div class="hero-content" style="display:none;">
+            <div style="font-size: 4rem; margin-bottom: 1rem; animation: floatBrain 4s ease-in-out infinite;">🧠</div>
+            <h1>AI LAB FOR NETWORK THERAPEUTICS</h1>
+            <h2 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem; color: rgba(255,255,255,0.9);">Cutting-edge AI Research for Brain Health</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95;">Pioneering research at the intersection of artificial intelligence and neurotherapeutics</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="smoothScroll({target: {getAttribute: () => '#research'}})">Explore Research</button>
+                <button class="btn btn-secondary" onclick="smoothScroll({target: {getAttribute: () => '#career'}})">Join Us</button>
+                <button class="btn btn-secondary" onclick="smoothScroll({target: {getAttribute: () => '#contact'}})">Get In Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home long text (Research context) -->
+    <section id="home-text" class="content-section" style="background: var(--light-bg); color: var(--text-dark);">
+        <div class="content-grid">
+            <h2 class="section-title">OBJECTIVE</h2>
+            <p>Placing the brain within the framework of complex systems and network science has transformed our understanding of neuropsychiatric disorders. Rather than isolated dysfunctions, these conditions are now recognized as multi-scale, systems level processes involving structural atrophy, network reorganization, and nonlinear interactions across distributed brain systems.</p>
+            <p>With the rapid expansion of large scale brain imaging datasets including MRI, behavioural, clinical, and genomics data the next wave of breakthroughs will be driven by advanced AI methodologies capable of extracting meaningful patterns from high dimensional data.</p>
+            <p>Our research focuses on identifying network-based biomarkers of neuropsychiatric disorders. We leverage these biomarkers to predict clinical outcomes, understand associations with risk factors, and characterize trajectories of disease progression.</p>
+            <p>Building on this foundation, we develop personalized treatment strategies using non-invasive brain stimulation techniques. Our work primarily involves Transcranial Direct Current Stimulation (tDCS) and Transcranial Magnetic Stimulation (TMS), which we integrate with MRI and EEG to design and optimize individualized neuromodulation protocols. Our overall objective is to create methods and tools which will enable a new exciting era of personalised medicine.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Our Lab</h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Pillars of Lab</h3>
+                <p>
+                    The Artificial Intelligence Lab for Brain Network Therapeutics (AIL4BNT) is dedicated to advancing the understanding and treatment of neuropsychiatric disorders through cutting-edge artificial intelligence and machine learning.
+                </p>
+                <p>
+                    At the core of our approach is a simple belief: progress demands resilience. We embrace failure as an essential part of discovery. In our lab, ideas are conceptualized, models are built, experiments are rigorously tested, and setbacks are not endpoints but lessons. We learn, refine, and persist until we succeed.
+                </p>
+                <p>
+                    We believe that success is not the opposite of failure, but the result of perseverance through it.
+                </p>
+                <p>
+                    If you share this mindset, we welcome you to <a href="#career">join us</a>.
+                </p>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 50vh; background: transparent; padding: 0; margin: 0; width: 100%; overflow: visible;">
+                <style>
+                    .pillar-container-new svg {
+                        max-width: 100%;
+                        max-height: 100%;
+                        width: 100%;
+                        height: 100%;
+                        filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8));
+                    }
+
+                    .pillar-container-new {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: visible;
+                    }
+
+                    .pillar-container-new .pillar-circle {
+                        fill-opacity: 0.95;
+                        filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+                        transition: filter 0.3s ease;
+                        cursor: pointer;
+                    }
+
+                    .pillar-container-new .pillar-circle:hover {
+                        filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.3));
+                    }
+
+                    .pillar-container-new .pillar-text {
+                        font-size: 48px !important;
+                        font-weight: 900;
+                        letter-spacing: 0.06em;
+                        text-transform: uppercase;
+                        fill: white;
+                        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+                        dominant-baseline: middle;
+                        text-anchor: middle;
+                        pointer-events: none;
+                        textLength: 420;
+                        lengthAdjust: spacingAndGlyphs;
+                    }
+
+                    .pillar-container-new .pillar-text tspan {
+                        font-size: inherit !important;
+                    }
+
+                    .pillar-container-new .center-label {
+                        font-size: 120px;
+                        font-weight: 900;
+                        letter-spacing: 0.15em;
+                        fill: black;
+                        text-anchor: middle;
+                        dominant-baseline: middle;
+                    }
+
+                    /* POP OUT ANIMATION - ALL PILLARS SIMULTANEOUS WITH STAGGER */
+                    /* Pillar 0 - Top (POPS FIRST in sequence) */
+                    .pillar-group-0 {
+                      animation: popPillar 3.5s ease-in-out infinite;
+                      animation-delay: 0s;
+                      transform-origin: 500px 30px;
+                    }
+
+                    /* Pillar 1 - Right (POPS with 0.8s stagger) */
+                    .pillar-group-1 {
+                      animation: popPillar 3.5s ease-in-out infinite;
+                      animation-delay: 0.8s;
+                      transform-origin: 970px 500px;
+                    }
+
+                    /* Pillar 2 - Bottom (POPS with 1.6s stagger) */
+                    .pillar-group-2 {
+                      animation: popPillar 3.5s ease-in-out infinite;
+                      animation-delay: 1.6s;
+                      transform-origin: 500px 970px;
+                    }
+
+                    /* Pillar 3 - Left (POPS with 2.4s stagger) */
+                    .pillar-group-3 {
+                      animation: popPillar 3.5s ease-in-out infinite;
+                      animation-delay: 2.4s;
+                      transform-origin: 30px 500px;
+                    }
+
+                    /* Arrow animation - rotating arrows CLOCKWISE */
+                    .arrows-group {
+                      animation: rotateArrows 20s linear infinite;
+                      transform-origin: 500px 500px;
+                    }
+
+                    @keyframes popPillar {
+                      0% {
+                        transform: scale(0);
+                        opacity: 0;
+                      }
+                      50% {
+                        transform: scale(1.15);
+                      }
+                      100% {
+                        transform: scale(1);
+                        opacity: 1;
+                      }
+                    }
+
+                    @keyframes rotateArrows {
+                      0% {
+                        transform: rotate(0deg);
+                      }
+                      100% {
+                        transform: rotate(360deg);
+                      }
+                    }
+                </style>
+                <div class="pillar-container-new">
+                    <svg viewBox="-250 -250 1500 1500" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" style="display: block;">
+                        <defs>
+                            <marker id="arrowheadNew" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="rgba(255, 255, 255, 0.5)" />
+                            </marker>
+
+                            <radialGradient id="pillarGrad0New">
+                                <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+                            </radialGradient>
+                            <radialGradient id="pillarGrad1New">
+                                <stop offset="0%" style="stop-color:#fdba74;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+                            </radialGradient>
+                            <radialGradient id="pillarGrad2New">
+                                <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a16207;stop-opacity:1" />
+                            </radialGradient>
+                            <radialGradient id="pillarGrad3New">
+                                <stop offset="0%" style="stop-color:#86efac;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#166534;stop-opacity:1" />
+                            </radialGradient>
+                        </defs>
+
+                        <!-- PILLAR 1: TOP (POPS FIRST) -->
+                        <g class="pillar-group-0">
+                            <circle cx="500" cy="30" r="210" fill="url(#pillarGrad0New)" class="pillar-circle"/>
+                            <text x="500" y="30" class="pillar-text">
+                                <tspan x="500" dy="-0.35em">CONCEPTUALIZE</tspan>
+                                <tspan x="500" dy="1.3em">&amp; ANALYSIS</tspan>
+                            </text>
+                        </g>
+
+                        <!-- PILLAR 2: RIGHT (POPS FOURTH - clockwise) -->
+                        <g class="pillar-group-1">
+                            <circle cx="970" cy="500" r="210" fill="url(#pillarGrad1New)" class="pillar-circle"/>
+                            <text x="970" y="500" class="pillar-text">
+                                <tspan x="970" dy="-0.35em">EXPERIENCE</tspan>
+                                <tspan x="970" dy="1.3em">&amp; FAIL</tspan>
+                            </text>
+                        </g>
+
+                        <!-- PILLAR 3: BOTTOM (POPS THIRD - clockwise) -->
+                        <g class="pillar-group-2">
+                            <circle cx="500" cy="970" r="210" fill="url(#pillarGrad2New)" class="pillar-circle"/>
+                            <text x="500" y="970" class="pillar-text">
+                                <tspan x="500" dy="-0.35em">RELEARN</tspan>
+                                <tspan x="500" dy="1.3em">&amp; RETRY</tspan>
+                            </text>
+                        </g>
+
+                        <!-- PILLAR 4: LEFT (POPS SECOND - clockwise) -->
+                        <g class="pillar-group-3">
+                            <circle cx="30" cy="500" r="210" fill="url(#pillarGrad3New)" class="pillar-circle"/>
+                            <text x="30" y="500" class="pillar-text" textLength="420" lengthAdjust="spacingAndGlyphs">
+                                <tspan x="30" dy="0">SUCCESS</tspan>
+                            </text>
+                        </g>
+
+                        <!-- CONNECTING ARROWS -->
+                        <g class="arrows-group" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2" fill="none" stroke-dasharray="4,4">
+                            <!-- Top to Right (clockwise) -->
+                            <path d="M 600 120 Q 750 250 880 380" marker-end="url(#arrowheadNew)"/>
+                            <!-- Right to Bottom (clockwise) -->
+                            <path d="M 880 620 Q 750 750 600 880" marker-end="url(#arrowheadNew)"/>
+                            <!-- Bottom to Left (clockwise) -->
+                            <path d="M 400 880 Q 250 750 120 620" marker-end="url(#arrowheadNew)"/>
+                            <!-- Left to Top (clockwise) -->
+                            <path d="M 120 380 Q 250 250 400 120" marker-end="url(#arrowheadNew)"/>
+                        </g>
+
+                        <!-- CENTER LARGE CIRCLE -->
+                        <circle cx="500" cy="500" r="430" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                        <circle cx="500" cy="500" r="390" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                        
+                        <!-- CENTER TEXT -->
+                        <text x="500" y="480" class="center-label" fill="black">Pillars</text>
+                        <text x="500" y="560" style="font-size: 52px; font-weight: 700; letter-spacing: 0.08em; fill: black; text-anchor: middle; dominant-baseline: middle;">of AI4BNT</text>
+
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section id="career" style="background: white;">
+        <h2 class="section-title">Career Opportunities</h2>
+        <div class="content-grid">
+            <p>We are always looking for motivated and talented individuals to join our research team at NIMHANS. Our lab operates at the intersection of neuroimaging, computational neuroscience, and non-invasive brain stimulation, with a strong focus on translational impact in neuropsychiatric disorders.</p>
+            
+            <h3 style="margin-top: 1.5rem;">🔬 Research Interns / Project Engineer</h3>
+            <p>We are seeking Research Interns or Project Engineers with a Bachelor's or Master's degree in:</p>
+            <ul>
+                <li>Engineering (Biomedical, Electrical, Electronics, Computer Science)</li>
+                <li>Physics / Mathematics / Cognitive Science / Psychology</li>
+                <li>Data Science or related disciplines</li>
+            </ul>
+            <p>Candidates with experience in neuroimaging, machine learning, signal processing, or programming (Python/MATLAB) will be preferred.</p>
+            
+            <h3>🎓 PhD Positions</h3>
+            <p>We welcome applications from highly motivated students with backgrounds in:</p>
+            <ul>
+                <li>Engineering / Computer Science / AI & Data Science</li>
+                <li>Cognitive Neuroscience / Systems Neuroscience / Psychology / Medical background (MBBS/MD)</li>
+            </ul>
+            <p>Applicants are expected to apply through the official PhD programs. Please indicate <strong>Dr. Rajan Kashyap</strong> as a potential supervisor in your application (if applicable). Our lab offers a highly interdisciplinary and flexible research environment, enabling students to tailor their research at the interface of neuroscience, AI, and clinical translation. We have close collaboration with several clinicians and clinical labs, allowing you to collaborate and perform translational research.</p>
+            
+            <h3>🧪 Postdoctoral Positions</h3>
+            <p>We are looking for Postdoctoral Fellows with a PhD in related Neuroscientific Disciplines. Research areas include:</p>
+            <ul>
+                <li>Biomarker Discovery – AI-driven analysis of large-scale brain imaging datasets</li>
+                <li>Prediction of disease progression and clinical outcomes</li>
+                <li>Causal mapping of risk factors and disease progression</li>
+                <li>Brain network organization and dynamics</li>
+                <li>Multimodal data fusion (MRI, EEG, behavioural, wearable data)</li>
+                <li>Computational modeling (e.g., neural mass models, network control approaches)</li>
+                <li>Non-invasive brain stimulation (tDCS, TMS) - Designing Personalised Protocols</li>
+                <li>Closed loop Brain Machine Interface (tDCS/TMS + EEG/fMRI)</li>
+            </ul>
+            <p>Current focus areas include aging and neuropsychiatric disorders (Cognitive disorders like Dementia, Schizophrenia, OCD, Movement Disorders), neurodevelopment, dementia (including Alzheimer's disease), psychiatric disorders, and personalized neuromodulation.</p>
+            
+            <h3>📩 How to apply:</h3>
+            <p>Interested candidates should email their CV, a brief research statement, and relevant publications (if any) to: <strong>rajankashyap6@gmail.com</strong></p>
+        </div>
+    </section>
+
+    <!-- Research Themes -->
+    <section id="research">
+        <h2 class="section-title">Research Themes</h2>
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon">🧠</div>
+                <h3><a href="#" class="theme-link" data-theme="theme-brain-disorders">Brain Disorders - Where Heterogeneity is the Lock and AI is the Key</a></h3>
+                <p>Click to view the full concept and key papers.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">🧬</div>
+                <h3><a href="#" class="theme-link" data-theme="theme-risk-signatures">Decoding Brain Signatures of Risk Factors</a></h3>
+                <p>Click to view the full concept and key papers.</p>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">⚡</div>
+                <h3><a href="#" class="theme-link" data-theme="theme-personalised-medicine">Personalised Medicine - The Future of Treatment</a></h3>
+                <p>Click to view the full concept and key papers.</p>
+            </div>
+        </div>
+
+        <div id="theme-details-container" style="display: none;">
+        <div class="pub-list" style="margin-top: 2rem;">
+            <div class="theme-detail" id="theme-brain-disorders" style="display: none;">
+            <h3 style="margin-bottom: 0.75rem; color: #342ed1;">Brain Disorders - Where Heterogeneity is the Lock and AI is the Key</h3>
+            <p>Neuropsychiatric disorders are inherently heterogeneous, often presenting as overlapping syndromes driven by multiple risk factors, biological variants, and interacting pathophysiological processes. For example, depression may co-occur with frontotemporal dementia, which itself spans diverse clinical variants including behavioural, semantic, agrammatic, logopenic, and motor forms. This complexity poses significant challenges for accurate diagnosis and the development of targeted therapies.</p>
+            <p>Emerging evidence suggests that the brain's network architecture holds critical insights into this heterogeneity. At AI4BNT, we develop linear and nonlinear mathematical models, along with statistically explainable AI frameworks, to identify network-based biomarkers from multimodal brain MRI data.</p>
+            <p><strong>Some of our key works are highlighted below:</strong></p>
+            <ol>
+                <li>Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015). Neuroanatomic localization of priming effects for famous faces with latency corrected event related potentials. <em>Brain Research</em>, 1632, 58-72.</li>
+                <li>Kashyap, R., Bhattacharjee, S., Sommer, W., Zhou, C. (2018). Repetition priming effects for famous faces through dynamic causal modelling of latency-corrected event-related brain potentials. <em>European Journal of Neuroscience</em>, 49(10), 1330-1347.</li>
+                <li>Kashyap, R., Kong, R., Bhattacharjee, S., Lia, J., Zhou, H., Yeo, B.T. (2019). Individual specific fMRI subspaces improve functional connectivity prediction of behaviour. <em>NeuroImage</em>, 189, 804-812. (Corresponding author)</li>
+                <li>Kashyap, R., Eng, G.K., Bhattacharjee, S., Gupta, B., Ho, R., Ho, C., Zhang, M., Mahendran, R., Sim, K., Chen, S.A. (2021). Individual-based approaches reveal fronto-striato-limbic dissociation and cerebellar-visual association in obsessive-compulsive disorder. <em>Scientific Reports</em>, 11(1), 1354.</li>
+                <li>Kashyap, R., Bharadwaj, S., Bhattacharjee, S., Sunny, A.S., Udupa, K., Kumar, M., Pal, P.K., Bharath, R.D. (2023). The perturbational map of low frequency repetitive transcranial magnetic stimulation of primary motor cortex in movement disorders. <em>Brain Disorders</em>, 9, 10071.</li>
+                <li>Bhattacharjee, S., Udupa, K., Venkatasubramanian, B., Oishi, K., Desmond, J.E., Rapp, B., Chen, S.A., Kashyap, R. (2024). Alignment of behaviour and tDCS stimulation site induces maximum response: Evidence from online tDCS and ERP. <em>Scientific Reports</em>, 14(1), 19715.</li>
+                <li>Bhattacharjee, S., Chakraborty, I., Kashyap, R., Sreeraj, V.S., Arshad, F., Yamini, B.K., Bharath, R.D., Sivakumar, P.T., Venkatsubramanian, G., Alladi, S., Oishi, K., Desmond, J.E., Chen, S.H.A., Sathyaprabha, T.N., Udupa, K. (2025). Possible target regions for noninvasive modulation of language network in primary progressive aphasia: A narrative review. <em>Brain Disorders</em>, 19, 100255.</li>
+                <li>Khokhar, S.K., Kumar, M., Arshad, F., Goyal, S., Tiwari, M., Thanissery, N., Ramakrishnan, S., Nagaraj, C., Kashyap, R., Mangalore, S., Gandhi, T.K. (2025). Multiplex connectomics reveal altered networks in frontotemporal dementia: A multisite study. <em>Network Neuroscience</em>, 9(2), 615-630.</li>
+                <li>Kashyap, R., Zhou, C., Tsapkini, K., Desmond, J.E., Chen, S.H.A., Bharath, R.D., Bhattacharjee, S. (2025). Longitudinal evaluation of common and unique brain networks in variants of primary progressive aphasia. <em>Alzheimer's Research and Therapy</em>, 17(1), 1-14.</li>
+                <li>Bhattacharjee, S., Sivakumar, P.T., Venkatsubramanian, G., Oishi, K., Chen, S.H.A., Tsapkini, K., Desmond, J.E., Sathyaprabha, T.N., Udupa, K., Kashyap, R. (2025). The role of structural and functional parameters in designing pathology-specific tDCS protocols for primary progressive aphasia. <em>Alzheimer's Research and Therapy</em>, 17(1), 156.</li>
+                <li>Mehta, M.U., Bhattacharjee, S., Govindaraj, R., Ramachandraiah, C., Bolo, N., Bharath, D.R., Thirthalli, J., Venkatasubramanian, G., Gangadhar, B., Pascual-Leone, A., Keshavan, M., Kashyap, R. Sex-dependent network-level cortical plasticity and its association with antipsychotic response in schizophrenia: Evidence from a personalized-TMS-fMRI study. <em>Journal of Neurophysiology</em> (Under Revision).</li>
+            </ol>
+            </div>
+
+            <div class="theme-detail" id="theme-risk-signatures" style="display: none;">
+            <h3 style="margin-top: 2rem; margin-bottom: 0.75rem; color: #342ed1;">Decoding Brain Signatures of Risk Factors</h3>
+            <p>Human life is shaped by daily habits, environmental exposures, trauma, and upbringing. These diverse experiences leave measurable imprints on the brain. At AI4BNT, we investigate these brain signatures using multimodal neuroimaging and advanced AI approaches.</p>
+            <p>In adults (above 30 years), distinct brain signatures are associated with lifestyle and behavioral factors such as smoking, alcohol use, substance use, and antisocial behavior. In children and adolescents (below 18 years), these signatures often reflect early-life adversity, including abuse and neglect.</p>
+            <p>Our research extends across the lifespan, aiming to understand how these factors influence brain ageing and contribute to the development of cognitive and neuropsychiatric disorders at different stages of life.</p>
+            <p><strong>Some of our key works are highlighted below:</strong></p>
+            <ol>
+                <li>Kashyap, R., Bhattacharjee, S., Yeo, B.T., Chen, S.A. (2019). Maximizing dissimilarity in resting state detects heterogeneous subtypes in healthy population associated with high substance-use and problems in antisocial personality. <em>Human Brain Mapping</em>, 41(5), 1261-1273.</li>
+                <li>Kashyap, R., Holla, B., Bhattacharjee, S., Sharma, E., Mehta, M.U., Vaidya, N., Bharath, R.D., Murthy, P., Basu, D., Subodh, B.N., Singh, R.L., Lourembam, R., Chakrabarti, A., Kartik, K., Kalyanram, K., Kumaran, K., Krishnaveni, G., Krishna, M., Kuriyan, R., Kurpad, S.S., Desrivieres, S., Purushottam, M., Barker, G.J., Orfanos, P.D., Hickman, M., Heron, J., Toledano, M., Schumann, G., Benegal, V., and cVEDA Consortium (2024). Childhood adversities characterize the heterogeneity in the brain pattern of individuals during neurodevelopment. <em>Psychological Medicine</em>, 113.</li>
+                <li>Kashyap, R., L. Tanushree, Mayo Clinic Study of Ageing, Bhattacharjee, S. (2026). Brain ageing and cardiometabolic risk factors: Prioritising blood pressure control for dementia prevention. <em>Alzheimer's and Dementia</em> (Under Revision).</li>
+            </ol>
+            </div>
+
+            <div class="theme-detail" id="theme-personalised-medicine" style="display: none;">
+            <h3 style="margin-top: 2rem; margin-bottom: 0.75rem; color: #342ed1;">Personalised Medicine - The Future of Treatment</h3>
+            <p>Non-invasive brain stimulation techniques, such as Transcranial Direct Current Stimulation (tDCS) and Transcranial Magnetic Stimulation (TMS), are emerging as promising tools for treating neuropsychiatric disorders. However, current approaches often rely on standardized anatomical targets and fixed stimulation parameters, overlooking individual variability in brain connectivity and clinical presentation.</p>
+            <p>At AI4BNT, we address this gap through computational modeling and personalized approaches. Using techniques such as the finite element method, we simulate electric field propagation in the brain and integrate these models with advanced mathematical frameworks to tailor stimulation parameters to an individual's brain anatomy.</p>
+            <p>Our group has developed four open-source toolboxes that enable MRI-based personalization of tDCS parameters. These tools have been experimentally validated, demonstrating the feasibility and effectiveness of individualized stimulation strategies. To the best of our knowledge, this is among the first efforts to personalize tDCS current dosing and demonstrate its therapeutic potential.</p>
+            <p>The toolboxes are available via the software section, and some of our ongoing work is highlighted below:</p>
+            <ol>
+                <li>Kashyap, R., Bhattacharjee, S., Desmond, J.E., Rapp, B., Oishi, K., Chen, S.A. (2019). Simulation analyses of tDCS montages for the investigation of dorsal and ventral pathways. <em>Scientific Reports</em>, 9(1), 1-17.</li>
+                <li>Kashyap, R., Bhattacharjee, S., Arumugam, R., Oishi, K., Desmond, J.E., Chen, S. (2020). i-SATA: A MATLAB based toolbox to estimate electric field generated by tDCS in an individual brain. <em>Journal of Neural Engineering</em>, 17(5), 056034.</li>
+                <li>Bhattacharjee, S., Kashyap, R., Goodwill, M.A., O'Brien, B., Rapp, B., Oishi, K., Desmond, J.E., Chen, S.A. (2021). Sex difference in tDCS current mediated by changes in cortical anatomy: A study across young, middle and older adults. <em>Brain Stimulation</em>, 15(1), 125-140.</li>
+                <li>Kashyap, R., Bhattacharjee, S., Arumugam, R., Bharath, R.D., Udupa, K., Oishi, K., Desmond, J.E., Chen, S.A., Guan, C. (2021). Focality oriented selection of current dose for transcranial direct current stimulation. <em>Journal of Personalised Medicine</em>, 11(9), 940.</li>
+                <li>Kashyap, R., Bhattacharjee, S., Bharath, R.D., Venkatsubramanian, G., Udupa, K., Bashir, S., Oishi, K., Desmond, J.E., Chen, S.A., Guan, C. (2022). Variation in cerebrospinal fluid of specific regions regulate focality in transcranial direct current stimulation. <em>Frontiers in Human Neuroscience</em>, 16, 952602.</li>
+                <li>Bhattacharjee, S., Kashyap, R., Sreeraj, V.S., Sivakumar, P.T., Venkatsubramanian, G., Alladi, S., Oishi, K., Desmond, J.E., Chen, S.H.A., Sathyaprabha, T.N., Udupa, K. (2024). Comparison of personalised doses in high definition and conventional tDCS for neuropsychiatric disorders using electric field modelling. <em>Brain Sciences</em>, 14(2), 1162.</li>
+                <li>Bhattacharjee, S., Sivakumar, P.T., Venkatsubramanian, G., Bharath, R.D., Oishi, K., Chen, S.H.A., Tsapkini, K., Desmond, J.E., Sathyaprabha, T.N., Udupa, K., Kashyap, R. (2025). Personalized transcranial direct current stimulation for behavioral and neurophysiologic outcomes. <em>JAMA Network Open</em>, 8(8), e2526148.</li>
+            </ol>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2 class="section-title">Publications</h2>
+        <div class="pub-list">
+            
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #342ed1;">Journal Articles</h3>
+            
+            <div class="pub-item">
+                <div class="pub-number">1.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015)</div>
+                    <div class="pub-title">Neuroanatomic localization of priming effects for famous faces with latency corrected Event related potentials</div>
+                    <div class="pub-journal">Brain Research, 1632, 58-72</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">2.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Mondol, M., Kashyap, R. (2016)</div>
+                    <div class="pub-title">Effect of Hypertension and Hypercholesterolemia on Auditory Brainstem Response in Adults</div>
+                    <div class="pub-journal">International Journal of Medical and Health Sciences, 5(4), 267-271 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">3.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., & Kashyap, R. (2017)</div>
+                    <div class="pub-title">Neuromuscular Characterisation of dysphagia following stroke</div>
+                    <div class="pub-journal">International Journal of Applied Medical Sciences, 2(2)</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">4.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Sommer, W., Zhou, C. (2018)</div>
+                    <div class="pub-title">Repetition Priming Effects for Famous Faces through Dynamic Causal Modelling of Latency-Corrected Event-Related Brain Potentials</div>
+                    <div class="pub-journal">European Journal of Neuroscience, 49(10), 1330-1347 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">5.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap. R, Kong R., Bhattacharjee, S., Lia, J., Zhou, H., Yeo, B.T. (2019)</div>
+                    <div class="pub-title">Individual specific fMRI subspaces improve Functional Connectivity prediction of Behaviour</div>
+                    <div class="pub-journal">Neuroimage, 189, 804-812 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">6.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Desmond, J. E., Rapp, B., Oishi, K., Chen, S. A. (2019)</div>
+                    <div class="pub-title">Simulation Analyses of tDCS Montages for the investigation of Dorsal and Ventral pathways</div>
+                    <div class="pub-journal">Scientific Reports, 9(1), pp.1-17 <strong>- Downloaded >700 times</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">7.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Yeo, B.T. and Chen, S.A. (2019)</div>
+                    <div class="pub-title">Maximizing Dissimilarity in Resting State detects Heterogeneous Subtypes in Healthy population associated with High Substance-Use and Problems in Antisocial Personality</div>
+                    <div class="pub-journal">Human Brain Mapping, 41(5), 1261-1273 <strong>(Corresponding author)</strong> - <strong><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.24649" target="_blank">Editor's Choice - Cover Page</a></strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">8.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Kashyap, R., Chen, S.A., Turki, A., Yoo, W.K., and Bashir, S. (2020)</div>
+                    <div class="pub-title">The Primary Motor Cortex: More than movement execution</div>
+                    <div class="pub-journal">Journal of Motor Behaviour, 53(2), 258-274</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">9.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S, Kashyap, R., Brien A.OB., Rapp, B., McCloskey, M., Oishi, K., Desmond, J. E., Chen, S. A (2021)</div>
+                    <div class="pub-title">Reading Proficiency influences the effect of TDCS: evidence from selective modulation of dorsal and ventral pathways of reading in bilinguals</div>
+                    <div class="pub-journal">Brain and Language, 210, p.104850</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">10.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Arumugam, R., Oishi, K., Desmond, J. E., Chen, S. (2020)</div>
+                    <div class="pub-title">A-SATA: A MATLAB based toolbox to estimate electric field generated by tDCS in an individual brain</div>
+                    <div class="pub-journal">Journal of Neural Engineering, 17(5), p.056034 <strong>(Corresponding author)</strong> <strong>- Downloaded >1500 times - Highest Downloaded Toolbox</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">11.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Eng, GK., Bhattacharjee, S., Gupta B, Ho, R., Ho, C., Zhang, M., Mahendran, R., Sim K., Chen, S. A. (2021)</div>
+                    <div class="pub-title">Individual-based Approaches reveal Fronto-Striato-Limbic dissociation and Cerebellar-Visual association in Obsessive-Compulsive Disorder</div>
+                    <div class="pub-journal">Scientific reports, 11(1), p.1354 <strong>(Corresponding author)</strong> - <strong><a href="https://facultyopinions.com/article/739373355" target="_blank">Nominated as Exceptional Research</a></strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">12.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Kashyap, R., Goodwill, M.A., O'Brien, B., Rapp, B., Oishi, K., Desmond, J. E., & Chen, S. A. (2021)</div>
+                    <div class="pub-title">Sex Difference in tDCS Current Mediated by Changes in Cortical Anatomy: A Study across Young, Middle and Older adults</div>
+                    <div class="pub-journal">Brain Stimulation, 15(1), 125-140</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">13.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee S, Arumugam, R., Bharath, RD, Oishi, K., Desmond, J. E., Chen, S. (2021)</div>
+                    <div class="pub-title">Focality Oriented Selection of Current Dose for Transcranial Direct Current Stimulation</div>
+                    <div class="pub-journal">Journal of Personalised Medicine, 11(9), 940 <strong>(Corresponding author)</strong> <strong>- Downloaded >100 times</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">14.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee S, Bharath, RD, Venkatsubramanian, G, Udupa, K, S., Bashir, S., Oishi, K., Desmond, J. E., Chen, S. A. & Guan, C. (2022)</div>
+                    <div class="pub-title">Variation in Cerebrospinal fluid of Specific Regions regulate Focality in Transcranial Direct Current Stimulation</div>
+                    <div class="pub-journal">Frontiers of Human Neuroscience, 16, 952602 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">15.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bharadwaj, S., Bhattacharjee, S., Sunny, A. S, Udupa, K., Kumar, M., Pal, P K, Bharath R D (2023)</div>
+                    <div class="pub-title">The Perturbational Map of Low Frequency Repetitive Transcranial Magnetic Stimulation of Primary Motor Cortex in Movement Disorders</div>
+                    <div class="pub-journal">Brain Disorders, 9, 10071 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">16.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Holla, B.; Bhattacharjee, S.; Sharma, E.; Mehta, M.U, Vaidya, N.; Bharath, R.D.; Murthy, P.; Basu, D.; Subodh, B. N.; Singh, R.L.; Lourembam, R.; Chakrabarti, A.; Kartik, K.; Kalyanram, K.; Kumaran, K.; Krishnaveni, G.; Krishna, M.; Kuriyan, R.; Kurpad, S.S.; Desrivières, S.; Purushottam, M.; Barker, G.J; Orfanos, P.D; Hickman, M.; Heron, J; Toledano, M.; Schumann,G.; Benegal, V.; and Consortium on Vulnerability to Externalizing Disorders and Addictions (cVEDA) (2024)</div>
+                    <div class="pub-title">Childhood adversities characterize the heterogeneity in the brain pattern of individuals during neurodevelopment</div>
+                    <div class="pub-journal">Psychological Medicine, 113 <strong>(Corresponding Author)</strong> - <strong><a href="https://www.psypost.org/new-study-reveals-lasting-impact-of-childhood-adversity-on-brain-development/" target="_blank">Covered by International Media - PsyPost</a></strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">17.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Udupa, K., Venkatasubramanian, B., Oishi, K., Desmond, J. E., G., Rapp, & Chen, S. A., Kashyap, R. (2024)</div>
+                    <div class="pub-title">Alignment of Behaviour and tDCS Stimulation Site Induces Maximum Response: Evidence from Online tDCS and ERP</div>
+                    <div class="pub-journal">Scientific Reports, 14(1), 19715 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">18.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee S, Kashyap R., Sreeraj VS, Sivakumar P.T., Venkatsubramanian G., Alladi S., Oishi K., Desmond J.E, Chen SHA, Sathyaprabha TN & Udupa K. (2024)</div>
+                    <div class="pub-title">Comparison of Personalised Doses in High Definition and Conventional tDCS for Neuropsychiatric Disorders using Electric field Modelling</div>
+                    <div class="pub-journal">Brain Sciences, 14(2), 1162 - <a href="https://www.deccanherald.com/india/karnataka/bengaluru/boost-for-treating-psychiatric-disorders-as-ai-meets-medicine-3230847" target="_blank">Covered by Deccan Herald</a></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">19.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee S, Chakraborty I., Kashyap R., Sreeraj VS, Arshad F, Yamini B.K, Bharath R.D., Sivakumar P.T., Venkatsubramanian G., Alladi S., Oishi K., Desmond J.E, Chen SHA, Sathyaprabha TN & Udupa K. (2025)</div>
+                    <div class="pub-title">Possible Target Regions for Noninvasive Modulation of Language Network in Primary Progressive Aphasia: A Narrative Review</div>
+                    <div class="pub-journal">Brain Disorder, 19, 100255</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">20.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Khokhar, S.K., Kumar, M., Arshad, F., Goyal, S., Tiwari, M., Thanissery, N., Ramakrishnan, S., Nagaraj, C., Kashyap, R., Mangalore, S. and Gandhi, T.K. (2025)</div>
+                    <div class="pub-title">Multiplex connectomics reveal altered networks in frontotemporal dementia: A multisite study</div>
+                    <div class="pub-journal">Network Neuroscience, 9(2), pp.615-630</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">21.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Zhou C, Tsapkini K, Desmond, J. E., Chen SHA, Bharath, RD, Bhattacharjee S (2025)</div>
+                    <div class="pub-title">Longitudinal Evaluation of Common and Unique Brain Networks In Variants of Primary Progressive Aphasia</div>
+                    <div class="pub-journal">Alzheimer's Research and Therapy, 17(1), 1-14 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">22.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee S, Sivakumar P.T., Venkatsubramanian G., Oishi K., Chen SHA, Tsapkini K, Chen SHA, Desmond J.E, Sathyaprabha TN, Udupa K. Kashyap R. (2025)</div>
+                    <div class="pub-title">The Role of Structural and Functional Parameters in Designing Pathology-Specific tDCS Protocols for Primary Progressive Aphasia</div>
+                    <div class="pub-journal">Alzheimer's Research and Therapy, 17(1), 156 <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">23.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee S, Sivakumar P.T., Venkatsubramanian G., Bharath, RD; Oishi K., Chen SHA, Tsapkini K, Chen SHA, Desmond J.E, Sathyaprabha TN, Udupa K. Kashyap R. (2025)</div>
+                    <div class="pub-title">Personalized Transcranial Direct Current Stimulation for Behavioral and Neurophysiologic Outcomes</div>
+                    <div class="pub-journal">JAMA Network Open, 8(8):e2526148 <strong>(Corresponding author)</strong> <strong>- WORLD'S FIRST PERSONALISED tDCS EXPERIMENTAL PROTOCOL</strong></div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">24.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Mehta, M.U, Bhattacharjee, S., Govindaraj R., Ramachandraiah, C., Bolo, N., Bharath, D.R, Thirthalli, J., Venkatasubramanian, G., Gangadhar, B., Pascual-Leone, A., Keshavan, M.. Kashyap, R. (Under Revision)</div>
+                    <div class="pub-title">Sex-dependent network-level cortical plasticity and its association with antipsychotic response in schizophrenia: Evidence from a personalized-TMS-fMRI study</div>
+                    <div class="pub-journal">Journal of Neurophysiology <strong>(Corresponding author)</strong></div>
+                </div>
+            </div>
+
+            <!-- Noted Conference Abstracts Section -->
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem; color: #342ed1;">Noted Conference Abstracts</h3>
+            
+            <div class="pub-item">
+                <div class="pub-number">1.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Chakraborty I., Kashyap R., Sreeraj VS, Arshad F, Yamini B.K, Bharath R.D., Sivakumar P.T., Venkatsubramanian G., Alladi S., Oishi K., Desmond J.E, Chen SHA, Sathyaprabha TN Udupa K & Bhattacharjee S. (2024)</div>
+                    <div class="pub-title">Comparison of Conventional and HD-tDCS for Neuropsychiatric Disorders</div>
+                    <div class="pub-journal">Oral Presentation at OHBM, Seoul, 2024 (ICMR Travel Fellowship)</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">2.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee S., Kashyap R., O'Brien B., Rapp B., Oishi K., Desmond J.E, Chen A. (2021)</div>
+                    <div class="pub-title">The Sex Difference in simulated tDCS current across different age groups mediated by changes in cortical anatomy</div>
+                    <div class="pub-journal">Organization of Human Brain Mapping 2021 (Exceptional Abstract Award, 2021)</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">3.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Eng, G.K; Bhattacharjee, S.; Gupta, B.; Ang, D.; Long, S.Y.; Ho, RC.,M., Ho, CS.,H.; Zhang, M.,W.; Mahendran, R.; Sim, K.; Chen, SH., A. (2020)</div>
+                    <div class="pub-title">Functional Connectivity from Individual-fMRI-Subspace Improves Comparison of OCD and Control group</div>
+                    <div class="pub-journal">The 26th Annual Meeting of the Organization for Human Brain Mapping, Montreal, Canada</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">4.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Kong. R., Kuek, N., Chen., SH., A., Yeo, B.T.T (2019)</div>
+                    <div class="pub-title">Sample Data Selection in resting state fMRI Improves the Prediction Accuracy of Behavioral Measures</div>
+                    <div class="pub-journal">The 25th Annual Meeting of the Organization for Human Brain Mapping, Rome, Italy</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">5.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Kashyap. R., Chew. A., Desmond. J.E., Chen., SH., A. (2019)</div>
+                    <div class="pub-title">Gender Difference in the Effect of tDCS on Reading</div>
+                    <div class="pub-journal">25th Annual Human Brain Mapping Conference, Rome, Italy</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">6.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattarcharjee, S., Chew, A., Kashyap, R., Wu, C.Y., Yeo. M., O'Brien. B., Rapp, B., McCloskey, M., Oishi, K., Desmond, J.E., Chen, S. A. (2019)</div>
+                    <div class="pub-title">Could tDCS Modulate Bilingual Reading?</div>
+                    <div class="pub-journal">Brain Stimulation, 2019-03-01, Volume 12, Issue 2, Pages 569-569</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">7.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Kong, R., Lia, J., Yeo, B.T. (2018)</div>
+                    <div class="pub-title">Individual fMRI subspaces enhance fMRI Behavioural Prediction</div>
+                    <div class="pub-journal">Organization of Human Brain Mapping Annual Meeting: Singapore, 1679</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">8.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, S., Kashyap, R., Desmond, J. E., Rapp, B., Oishi, K., Chen, S. A. (2018)</div>
+                    <div class="pub-title">A Systematic Analysis of Simulations for tDCS Montages Applied in Reading</div>
+                    <div class="pub-journal">Organization of Human Brain Mapping Annual Meeting; Singapore, 1691</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">9.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015)</div>
+                    <div class="pub-title">Improved Source Localization of priming effect of face Recognition based on RIDE</div>
+                    <div class="pub-journal">5th International Conference on cognitive Neurodynamics, Sanya, China</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">10.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015)</div>
+                    <div class="pub-title">Neuroanatomic localization of priming effects for famous faces with RIDE</div>
+                    <div class="pub-journal">Neuroinformatics, 2015, Cairns, Australia</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">11.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015)</div>
+                    <div class="pub-title">Improved source dynamics of face recognition through RIDE</div>
+                    <div class="pub-journal">18th conference of the physical society of Hong Kong hosted by Hong Kong Polytechnic University</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">12.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015)</div>
+                    <div class="pub-title">Understanding face recognition with RIDE</div>
+                    <div class="pub-journal">"Stroke rehab: No-Tech to Go-Tech", Christ Church, New Zealand, organized by Rose Centre for Stroke Recovery and Research, University of Canterbury</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">13.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee I. R., Shaptadvipa B., Bhattacharjee, S., Kashyap, R. (2014)</div>
+                    <div class="pub-title">Understanding space life through principles of Self Gravitation</div>
+                    <div class="pub-journal">65th International Astronautical Congress</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">14.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee I.R., Shaptadvipa B., Bhattacharjee, S., Kashyap, R. (2014)</div>
+                    <div class="pub-title">Self gravitation bio: Some convincing evidences on astrophysical principles</div>
+                    <div class="pub-journal">18th International Biophysics Congress (IUPAB), Brisbane, Australia</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">15.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., and Bhattacharjee, I., R. (2011)</div>
+                    <div class="pub-title">Finite element approach to understand self-gravitational bio in embryological compact mass</div>
+                    <div class="pub-journal">Proc. in NEW & NOTABLE section of the 8th European Biophysics Congress, organized by the European Biophysical Societies Association, Budapest</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">16.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee I.R., Kashyap, R., Bhattacharjee, S. (2011)</div>
+                    <div class="pub-title">Finite element approach to understand 'self-gravitation bio' towards incidence of 'macromolecular crowding' and 'anomalous sub diffusion'</div>
+                    <div class="pub-journal">17th International Biophysics Congress (IUPAB)</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">17.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Bhattacharjee, S., Bhattacharjee, I., R. (2011)</div>
+                    <div class="pub-title">Mathematical approach on embryogenesis in the light of self gravitation bio</div>
+                    <div class="pub-journal">17th International Biophysics Congress (IUPAB), Beijing, China</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">18.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Bhattacharjee, I.R., Kashyap, R., Shaptadvipa, B. (2009)</div>
+                    <div class="pub-title">Intrinsic gravity versus metabolically inert infrastructure and basal metabolic rate in living mass</div>
+                    <div class="pub-journal">7th European Biophysics Congress Genoa, Italy</div>
+                </div>
+            </div>
+
+            <!-- Theses and Book Chapters -->
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem; color: #342ed1;">Theses & Book Chapters</h3>
+            
+            <div class="pub-item">
+                <div class="pub-number">1.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R., Ouyang, G., Sommer, W., & Zhou, C. (2016)</div>
+                    <div class="pub-title">Improved Source Localization of Priming Effect of Face Recognition Based on RIDE</div>
+                    <div class="pub-journal">Advances in Cognitive Neurodynamics (V), 533-539</div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-number">2.</div>
+                <div class="pub-content">
+                    <div class="pub-authors">Kashyap, R. (2015)</div>
+                    <div class="pub-title">Improved localization of neural sources and dynamical causal modelling of latency-corrected event related brain potentials and applications to face recognition and priming</div>
+                    <div class="pub-journal">PhD Thesis, Hong Kong Baptist University, Hong Kong - <a href="https://pdfs.semanticscholar.org/0280/d877ff5f7b2af3e295d63137409546bcc2b8.pdf" target="_blank">View PDF</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section id="software" style="background: white;">
+        <h2 class="section-title">Software and Tools</h2>
+        <div class="content-grid">
+            <p><strong>Our lab develops open-source tools for brain network modeling, data visualization, and AI-assisted therapy design. All tools are freely available and can be downloaded from the links below.</strong></p>
+            <p>Visit our <a href="https://github.com/suklamaa" target="_blank"><strong>GitHub Repository</strong></a> for more details and to access all our open-source tools and resources.</p>
+        </div>
+        
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #342ed1; text-align: center;">Open Source Softwares Developed</h3>
+        
+        <div class="research-grid" style="margin-top: 1.5rem;">
+            <div class="research-card" onclick="window.open('https://github.com/suklamaa', '_blank')" style="cursor: pointer;">
+                <h3>iSATA-Network (2026)</h3>
+                <p><strong>Individual-Systematic Approach for tDCS Analysis - Network Based</strong></p>
+                <p>Created for network-based distribution of stimulation intensity in transcranial direct current stimulation (tDCS) analysis.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Status: Work in Progress</em></p>
+                <p style="margin-top: 0.75rem;"><a href="https://github.com/suklamaa" target="_blank" style="color: #1e40af; font-weight: bold;">GitHub →</a></p>
+            </div>
+            
+            <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/KWTCWK', '_blank')" style="cursor: pointer;">
+                <h3>iSATA-MNI (2022)</h3>
+                <p><strong>Individual-Systematic Approach for tDCS Analysis - MNI Atlas</strong></p>
+                <p>Open-source software that aids tDCS montage selection for individual head models/subjects using the AAL (Automated Anatomical Labeling) Atlas.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: 100+ times</strong></p>
+                <p style="margin-top: 0.75rem;"><a href="https://doi.org/10.21979/N9/KWTCWK" target="_blank" style="color: #1e40af; font-weight: bold;">Download →</a></p>
+            </div>
+            
+            <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/5W3RIM', '_blank')" style="cursor: pointer;">
+                <h3>iSATA (2021)</h3>
+                <p><strong>Individual-Systematic Approach for tDCS Analysis - Talairach</strong></p>
+                <p>Open-source software for tDCS montage selection for individual head models/subjects using the Talairach Atlas. Provides personalized transcranial direct current stimulation analysis.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: >1500 times - Highest Downloaded Toolbox</strong></p>
+                <p style="margin-top: 0.75rem;"><a href="https://doi.org/10.21979/N9/5W3RIM" target="_blank" style="color: #1e40af; font-weight: bold;">Download →</a></p>
+            </div>
+            
+            <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/DMWPZK', '_blank')" style="cursor: pointer;">
+                <h3>SATA (2020)</h3>
+                <p><strong>Systematic Approach for tDCS Analysis - Standard MNI</strong></p>
+                <p>Open-source software for tDCS montage selection for standard MNI brain head models. Enables systematic analysis of transcranial direct current stimulation parameters.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: >700 times</strong></p>
+                <p style="margin-top: 0.75rem;"><a href="https://doi.org/10.21979/N9/DMWPZK" target="_blank" style="color: #1e40af; font-weight: bold;">Download →</a></p>
+            </div>
+            
+            <div class="research-card" onclick="window.open('http://neuroimaginglab.org/assets/pdf/Imported/2019_03.pdf', '_blank')" style="cursor: pointer;">
+                <h3>Individual-Specific fMRI Subspace (2019)</h3>
+                <p><strong>Framework for Personalizing Resting-State fMRI Analysis</strong></p>
+                <p>Developed the framework to individualize resting-state fMRI analysis. This approach improves prediction accuracy of behavioral measures from functional connectivity data.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Referenced in 50+ papers</em></p>
+                <p style="margin-top: 0.75rem;"><a href="http://neuroimaginglab.org/assets/pdf/Imported/2019_03.pdf" target="_blank" style="color: #1e40af; font-weight: bold;">View PDF →</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- People / Team Section -->
+    <section id="people">
+        <h2 class="section-title">People</h2>
+        <div class="team-grid">
+            <h3 id="pi-section" class="team-section-header">Principle Investigator</h3>
+            <div class="team-member">
+                
+                <div class="member-info">
+                    <div class="member-name">Dr. Rajan Kashyap</div>
+                    <div class="member-bio">Dr. Rajan Kashyap completed his Electrical Engineering from NIT Bhopal and was selected as a Talent Italy Fellow (Full fellowship) to pursue his Masters in Electronics Engineering at Politecnico Di Torino, Italy. He earned his PhD in Physics (Neuroscience) from Hong Kong, in close collaboration with Humboldt University, Germany, supported by the Hong Kong Government's Top PhD Fellowship (HKPFS) and the DAAD Fellowship from Germany.
+Dr. Kashyap has extensive experience working with leading AI and neuroscience researchers. He served as a Research Scientist at the National University of Singapore under Dr. Thomas Yeo, one of the world’s top neuroscientists, and later at the AI & Clinical Brain Application Labs at Nanyang Technological University, Singapore, collaborating with Prof.. Annabel Chen and Cuntai Guan on AI, brain-computer interfaces, and neurorehabilitation. He also has industrial experience with companies like Oracle and Polaris and serves as an AI lecturer and neuroscientific consultant for universities and several startup organization.
+In 2022, he returned to India as a Ramalingaswami Fellow, a prestigious recognition by the Government of India for top Indian scientists abroad. He is now an Assistant Professor (under RLS Fellowship) at the Department of Neuroimaging and Interventional Radiology, NIMHANS, Bangalore. His research focuses on leveraging AI to analyze multimodal brain data and develop precision, non-invasive treatment strategies for neuropsychiatric disorders. He has developed four widely used open-source toolboxes and published extensively in top neuroscience journals.
+                    <div class="member-bio"><strong>Interests</strong></div>
+                    <ul style="margin-left: 1rem; text-align: left;">
+                        <li><strong>Music</strong> - He is a trained Tablist (Indian Classical Instrument) and loves to play the instrument at home and in invited concerts. Music soothes his soul.</li>
+                        <li><strong>Sports</strong> - Born to a national-level athlete mother, Rajan grew up inspired by sport and resilience. He went on to become a state-level swimming champion, a pursuit that entertains him to his core. One of his most profound memories is watching his mother compete in the stadium while enduring intense cancer treatment, just six months before her passing—a journey that will continue to inspire his soul.</li>
+                        <li><strong>Travelling</strong> - Travelled to several places on earth, enjoyed the food, culture and people.</li>
+                    </ul>
+                    
+                    <div class="member-bio" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="LAB/CV_RajanK_DB.pdf" download style="color: #7c3aed; text-decoration: none; border-bottom: 2px solid #7c3aed; padding-bottom: 2px;">CV</a>
+                        <span style="color: rgba(255,255,255,0.5);">|</span>
+                        <a href="https://orcid.org/0000-0002-5967-2173" target="_blank" style="color: #7c3aed; text-decoration: none; border-bottom: 2px solid #7c3aed; padding-bottom: 2px;">ORCID</a>
+                        <span style="color: rgba(255,255,255,0.5);">|</span>
+                        <a href="https://x.com/Rajankashya" target="_blank" style="color: #7c3aed; text-decoration: none; border-bottom: 2px solid #7c3aed; padding-bottom: 2px;">X</a>
+                        <span style="color: rgba(255,255,255,0.5);">|</span>
+                        <a href="https://www.linkedin.com/in/rajan-kashyap-1a089929/" target="_blank" style="color: #7c3aed; text-decoration: none; border-bottom: 2px solid #7c3aed; padding-bottom: 2px;">LinkedIn</a>
+                        <span style="color: rgba(255,255,255,0.5);">|</span>
+                        <a href="https://scholar.google.com/citations?user=N-duCjEAAAAJ&hl=en" target="_blank" style="color: #7c3aed; text-decoration: none; border-bottom: 2px solid #7c3aed; padding-bottom: 2px;">Scholar</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <h3 id="research-fellows-section" class="team-section-header">Research Fellows</h3>
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Tanushree L</div>
+                    <div class="member-bio">Tanushree is a dynamic researcher focused on developing AI-driven solutions from large-scale data. She has developed models to estimate brain age using MRI data. Her work combines hands-on expertise in building AI models with experimental validation using MRI, tDCS, and TMS, bridging computational approaches with real-world neuroimaging and neuromodulation applications.</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Rijin Reji</div>
+                    <div class="member-bio">A dynamic AI researcher and software developer at Ernst & Young, combining cutting-edge AI research with practical software solutions in the field of computational neuroscience and brain network analysis.</div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Arun Kumar P</div>
+                    <div class="member-bio">A cognitive scientist who spent a year with our lab gaining hands-on expertise in computational modeling. He is now pursuing his PhD in Neuroscience in Germany, continuing his research journey in brain and cognition.</div>
+                </div>
+            </div>
+<h3 id="doctoral-fellows-section" class="team-section-header">Doctoral Fellows</h3>
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Dr. T. Seetam Kumar</div>
+                    <div class="member-bio">Dr. Seeta Kumar (2022–2025) is a Neurointerventionist (MBBS, MD, DM) who completed his DM thesis with our lab. His award-winning thesis, "Network Organization and Memory – A Resting-State Functional Connectivity Study," received the Gold Medal. Dr. Kumar combines clinical expertise with a strong research focus in neurointervention and cognitive network analysis.
+Details about him can be found at <a href="https://www.seetamkumar.com" target="_blank">www.seetamkumar.com</a></div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Dr. Utkarsh Yadav</div>
+                    <div class="member-bio">Dr. Utkarsh Yadav (2023–2026) is an accomplished Interventional Neuroradiologist who completed his DM thesis titled "Role of Resting-State Connectivity in Predicting Postoperative Outcomes in Glioma Patients." A clinician-scientist with a modern approach to neuroradiology, he is deeply committed to integrating cutting-edge research with patient care. He combines clinical expertise with a strong research focus to advance diagnostic and therapeutic strategies in neuro-oncology.
+To learn more about him <a href="https://www.linkedin.com/in/utkarsh-yadav-17034585/" target="_blank">LinkedIn</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People / Team Section Continued -->
+    <section id="people-interns">
+        <div class="team-grid" style="margin-top: 0;">
+            <h3 id="research-interns-section" class="team-section-header">Research Intern</h3>
+            <div class="team-member">
+                <div class="member-info">
+                    <div class="member-name">Sureeti Sur</div>
+                    <div class="member-bio">Sureeti Sur a research scholar in the Department of Computer Science and Technology,University of North Bengal,WB working on the application of Artificial Intelligence in neuroscience, MRI thermometry, and medical image processing. She learned FMRI techniques during her internship in our lab.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" style="background: white;">
+        <h2 class="section-title">News </h2>
+        <div class="content-grid">
+            <h3>Recent Recognitions</h3>
+            <ul>
+                <li><strong>(2025)</strong> View Point Article on "Privacy Protection in Indian Health Care system" - <a href="https://analyticsindiamag.com/ai-features/ai-is-changing-healthcare-but-can-india-protect-patient-privacy" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Covered by Analytics India Magazine (AIM)</a></li>
+                <li><strong>(2024)</strong> Invited for Fire-side chat at Merck Group, India "Future for Generative Artificial Intelligence"</li>
+                <li><strong>(2024)</strong> Research covered by Deccan Herald, India's largest national newspaper on AI-assisted treatment for psychiatric disorders - <a href="https://www.deccanherald.com/india/karnataka/bengaluru/boost-for-treating-psychiatric-disorders-as-ai-meets-medicine-3230847" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Read article</a></li>
+                <li><strong>(2024)</strong> Oral presentation at OHBM, Seoul on HD-tDCS applications with ICMR Travel Fellowship</li>
+                <li><strong>(2023)</strong> Nominated as Exceptional Research by Faculty Opinions</li>
+                <li><strong>(2024)</strong> International media coverage on childhood adversity impact on brain development via PsyPost - <a href="https://www.psypost.org/new-study-reveals-lasting-impact-of-childhood-adversity-on-brain-development/" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Read article</a></li>
+                <li><strong>(2021)</strong> Study on compensation mechanism in Obsessive Compulsive Disorder nominated as Exceptional research - <a href="https://facultyopinions.com/article/739373355" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Faculty Opinions</a></li>
+                <li><strong>(2020)</strong> Study on aberrant fMRI brain signatures in adults selected as Editor's choice for journal cover - <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.24649" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Journal link</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact & Collaboration</h2>
+        <p style="text-align:center; max-width: 780px; margin: 0 auto 0.5rem; color: rgba(255,255,255,0.9);">Submit your collaboration request here. Messages are saved locally and can be viewed by the lab owner under the submissions section.</p>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:rajankashyap6@gmail.com" style="color: white;">rajankashyap6@gmail.com</a><br>For career inquiries and collaboration requests</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <h4>Location</h4>
+                        <p>Department of Neuroimaging and Interventional Radiology<br>NIMHANS, Bangalore<br>India</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submissions List Section -->
+    <section id="submissions" style="background: var(--light-bg);">
+        <h2 class="section-title">Collaboration Inquiries & Submissions</h2>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <button class="btn btn-primary" onclick="downloadSubmissions()" style="margin-right: 1rem;">📥 Download All</button>
+            <button class="btn btn-secondary" onclick="clearAllSubmissions()" style="background: #e74c3c; border-color: #e74c3c; color: white;">🗑️ Clear All</button>
+        </div>
+        <div id="submissionsContainer" class="submissions-grid"></div>
+        <div id="noSubmissions" style="text-align: center; padding: 3rem; color: var(--text-light);">
+            <p style="font-size: 1.1rem;">No submissions yet. Be the first to submit your inquiry!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About AI4BNT</h4>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 1.6;">Leading research laboratory dedicated to advancing brain network therapeutics through artificial intelligence and machine learning.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#about">About</a>
+                <a href="#research">Research Themes</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AIL4BNT Lab. All rights reserved. | Artificial Intelligence Lab for Brain Network Therapeutics</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        (function () {
+            var links = document.querySelectorAll('.theme-link');
+            var container = document.getElementById('theme-details-container');
+            var details = document.querySelectorAll('.theme-detail');
+
+            function showTheme(themeId) {
+                details.forEach(function (item) {
+                    item.style.display = item.id === themeId ? 'block' : 'none';
+                });
+                container.style.display = 'block';
+                var active = document.getElementById(themeId);
+                if (active) {
+                    active.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var themeId = this.getAttribute('data-theme');
+                    showTheme(themeId);
+                });
+            });
+        })();
+    </script>
+
+    <script>
+        function scrollToSection(value) {
+            if (value) {
+                const element = document.getElementById(value);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        function togglePeopleDropdown(event) {
+            event.preventDefault();
+            const dropdown = document.getElementById('peopleNavDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        function closeDropdowns() {
+            document.getElementById('peopleNavDropdown').classList.remove('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const peopleDropdown = document.getElementById('peopleNavDropdown');
+            const peopleDropdownLi = Array.from(document.querySelectorAll('li.dropdown')).find(li => li.querySelector('#peopleNavDropdown'));
+            if (peopleDropdownLi && !peopleDropdownLi.contains(event.target)) {
+                peopleDropdown.classList.remove('show');
+            }
+        });
+    </script>
+
+    <!-- JavaScript Files -->
+    <script src="js/navigation.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/submissions.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/brain-animation.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
