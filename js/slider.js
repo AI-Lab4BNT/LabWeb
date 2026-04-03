@@ -3,9 +3,13 @@
 let currentSlide = 0;
 let autoSlideInterval;
 
+let currentPiSlide = 0;
+let autoPiInterval;
+
 function initSlider() {
     const images = document.querySelectorAll('.slider-image');
     const dotsContainer = document.getElementById('sliderDots');
+    initPiSlider();
     
     // Create dots for each image
     images.forEach((_, index) => {
@@ -68,6 +72,21 @@ function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         changeSlide(1);
     }, 5000); // Change image every 5 seconds
+}
+
+function initPiSlider() {
+    const images = document.querySelectorAll('.pi-slider img');
+    if (!images.length) return;
+
+    images.forEach((img, index) => {
+        img.classList.toggle('active', index === 0);
+    });
+
+    autoPiInterval = setInterval(() => {
+        images[currentPiSlide].classList.remove('active');
+        currentPiSlide = (currentPiSlide + 1) % images.length;
+        images[currentPiSlide].classList.add('active');
+    }, 4000);
 }
 
 // Initialize slider when DOM is ready

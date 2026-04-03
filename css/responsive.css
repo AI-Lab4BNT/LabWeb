@@ -48,8 +48,51 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    .hero {
-        padding-top: 180px;
+    /* PI Member Responsive Design */
+    .pi-member {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: auto;
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .pi-member .member-info {
+        flex: 1 1 100%;
+        padding: 1rem;
+        order: 1;
+    }
+
+    .pi-sidebar {
+        flex: 0 0 100%;
+        order: 2;
+    }
+
+    .pi-slider-wrapper {
+        height: 300px;
+    }
+
+    .pi-interests {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pi-member {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .pi-slider-wrapper {
+        height: 250px;
+    }
+
+    .member-name {
+        font-size: 1.2rem;
+    }
+
+    .member-bio {
+        font-size: 0.9rem;
     }
 }
 
@@ -111,6 +154,18 @@
 
     .team-member:nth-child(even) {
         direction: ltr;
+    }
+
+    .pi-member {
+        display: block;
+    }
+
+    .pi-slider-wrapper {
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+        height: 220px;
+        margin-top: 1rem;
     }
 
     .member-image {
