@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,24 +16,23 @@
         <nav>
             <a href="#home" class="logo"><img src="LAB/AI4BNT.png" alt="AI4BNT Logo" class="logo-img">AI LAB FOR NETWORK THERAPEUTICS</a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" onclick="smoothScroll(event)">HOME</a></li>
-                <li><a href="#career" onclick="smoothScroll(event)">CAREER</a></li>
-                <li><a href="#research" onclick="smoothScroll(event)">RESEARCH</a></li>
-                <li><a href="#publications" onclick="smoothScroll(event)">PUBLICATION</a></li>
-                <li><a href="#software" onclick="smoothScroll(event)">SOFTWARE</a></li>
+                <li><a href="index.html">HOME</a></li><li><a href="career.html">CAREER</a></li>
+                <li><a href="research.html">RESEARCH</a></li>
+                <li><a href="publications.html">PUBLICATION</a></li>
+                <li><a href="software.html">SOFTWARE</a></li>
                 <li class="dropdown">
-                    <a href="#" onclick="togglePeopleDropdown(event)">PEOPLE ▼</a>
+                    <a href="people.html" onclick="togglePeopleDropdown(event)">PEOPLE</a>
                     <div class="dropdown-content" id="peopleNavDropdown">
                         <div class="people-nav-section">
-                            <a href="#pi-section" onclick="closeDropdowns(); smoothScroll(event)">Principle Investigator</a>
-                            <a href="#research-fellows-section" onclick="closeDropdowns(); smoothScroll(event)">Research Fellows</a>
-                            <a href="#doctoral-fellows-section" onclick="closeDropdowns(); smoothScroll(event)">Doctoral Fellows</a>
-                            <a href="#research-interns-section" onclick="closeDropdowns(); smoothScroll(event)">Research Interns</a>
+                            <a href="people.html#pi-section">Principle Investigator</a>
+                            <a href="people.html#research-fellows-section">Research Fellows</a>
+                            <a href="people.html#doctoral-fellows-section">Doctoral Fellows</a>
+                            <a href="people.html#research-interns-section">Research Interns</a>
                         </div>
                     </div>
                 </li>
-                <li><a href="#news" onclick="smoothScroll(event)">NEWS</a></li>
-                <li><a href="#contact" onclick="smoothScroll(event)">CONTACT</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -49,6 +48,7 @@
         <div class="slider-container">
             <div class="slider-wrapper">
                 <img src="LAB/8.jpg" alt="Lab 8" class="slider-image active">
+                <img src="LAB/9.jpg" alt="Lab 9" class="slider-image">
                 <img src="LAB/1.jpg" alt="Lab 1" class="slider-image">
                 <img src="LAB/2.jpg" alt="Lab 2" class="slider-image">
                 <img src="LAB/3.jpg" alt="Lab 3" class="slider-image">
@@ -64,22 +64,22 @@
                 
             </div>
             <div class="slider-controls">
-                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
-                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+                <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
             </div>
             <div class="slider-dots" id="sliderDots"></div>
         </div>
 
         <canvas id="brainCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
         <div class="hero-content" style="display:none;">
-            <div style="font-size: 4rem; margin-bottom: 1rem; animation: floatBrain 4s ease-in-out infinite;">🧠</div>
+            <div style="font-size: 4rem; margin-bottom: 1rem; animation: floatBrain 4s ease-in-out infinite;">&#129504;</div>
             <h1>AI LAB FOR NETWORK THERAPEUTICS</h1>
             <h2 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem; color: rgba(255,255,255,0.9);">Cutting-edge AI Research for Brain Health</h2>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95;">Pioneering research at the intersection of artificial intelligence and neurotherapeutics</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="smoothScroll({target: {getAttribute: () => '#research'}})">Explore Research</button>
-                <button class="btn btn-secondary" onclick="smoothScroll({target: {getAttribute: () => '#career'}})">Join Us</button>
-                <button class="btn btn-secondary" onclick="smoothScroll({target: {getAttribute: () => '#contact'}})">Get In Touch</button>
+                <button class="btn btn-primary" onclick="window.location.href='research.html'">Explore Research</button>
+                <button class="btn btn-secondary" onclick="window.location.href='career.html'">Join Us</button>
+                <button class="btn btn-secondary" onclick="window.location.href='contact.html'">Get In Touch</button>
             </div>
         </div>
     </section>
@@ -95,9 +95,9 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Our Lab</h2>
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2 class="section-title">ABOUT US</h2>
         <div class="about-grid">
             <div class="about-content">
                 <h3>Pillars of Lab</h3>
@@ -111,7 +111,7 @@
                     We believe that success is not the opposite of failure, but the result of perseverance through it.
                 </p>
                 <p>
-                    If you share this mindset, we welcome you to <a href="#career">join us</a>.
+                    If you share this mindset, we welcome you to <a href="career.html">join us</a>.
                 </p>
             </div>
             <div style="display: flex; justify-content: center; align-items: center; height: 50vh; background: transparent; padding: 0; margin: 0; width: 100%; overflow: visible;">
@@ -317,7 +317,7 @@
     </section>
 
     <!-- Career Section -->
-    <section id="career" style="background: white;">
+    <section id="career" style="background: white; display: none;">
         <h2 class="section-title">Career Opportunities</h2>
         <div class="content-grid">
             <p>We are always looking for motivated and talented individuals to join our research team. Our lab operates at the intersection of neuroimaging, computational neuroscience, and non-invasive brain stimulation, with a strong focus on translational impact in neuropsychiatric disorders.</p>
@@ -342,7 +342,7 @@
             <h3>🧪 Postdoctoral Positions</h3>
             <p>We are looking for Postdoctoral Fellows with a PhD in related Neuroscientific Disciplines. Research areas include:</p>
             <ul>
-                <li>Biomarker Discovery – AI-driven analysis of large-scale brain imaging datasets</li>
+                <li>Biomarker Discovery &ndash; AI-driven analysis of large-scale brain imaging datasets</li>
                 <li>Prediction of disease progression and clinical outcomes</li>
                 <li>Causal mapping of risk factors and disease progression</li>
                 <li>Brain network organization and dynamics</li>
@@ -353,7 +353,7 @@
             </ul>
             <p>Our research investigates a broad spectrum of neuropsychiatric disorders, such as 
         Cognitive disorders <strong>(Dementia, Schizophrenia, OCD, etc.)</strong>. We also focus on 
-        movement disorders (like <strong>(Parkinson’s disease, tremors and Duchenne Muscular Dystrophy, etc.</strong>), alongside 
+        movement disorders (like <strong>(Parkinson's disease, tremors and Duchenne Muscular Dystrophy, etc.</strong>), alongside 
         neurodevelopmental conditions such as <strong>Autism, Epilepsy, etc</strong>.
         A core pillar of our work is the application of personalized neuromodulation 
         (<strong>tDCS, tACS, and TMS</strong>) to tailor treatments for individual patient needs.
@@ -364,39 +364,30 @@
     </section>
 
     <!-- Research Themes -->
-    <section id="research">
+    <section id="research" style="display: none;">
         <h2 class="section-title">Research Themes</h2>
         <div class="research-grid">
             <div class="research-card">
-                <div class="research-icon">
-                    <img src="rt/2.jpg" alt="Brain Disorders" class="research-theme-image">
-                </div>
-                <h3><a href="#" class="theme-link" data-theme="theme-brain-disorders">Brain Disorders - Where Heterogeneity is the Lock and AI is the Key</a></h3>
-                <p>Click to view the full concept and key papers.</p>
+                <h3>Brain Disorders - Understanding the Complexity with AI</h3>
+                <p>Every brain is unique, and disorders like depression or dementia come in many forms. We use AI to unlock these differences and find better ways to diagnose and treat them.</p>
             </div>
             <div class="research-card">
-                <div class="research-icon">
-                    <img src="rt/1.jpg" alt="Decoding Brain Signatures" class="research-theme-image">
-                </div>
-                <h3><a href="#" class="theme-link" data-theme="theme-risk-signatures">Decoding Brain Signatures of Risk Factors</a></h3>
-                <p>Click to view the full concept and key papers.</p>
+                <h3>Decoding Brain Signatures of Risk Factors</h3>
+                <p>Life experiences leave marks on the brain. We explore how things like stress or habits affect brain health and predict future issues.</p>
             </div>
             <div class="research-card">
-                <div class="research-icon">
-                    <img src="rt/3.jpg" alt="Personalised Medicine" class="research-theme-image">
-                </div>
-                <h3><a href="#" class="theme-link" data-theme="theme-personalised-medicine">Personalised Medicine - The Future of Treatment</a></h3>
-                <p>Click to view the full concept and key papers.</p>
+                <h3>Personalised Medicine - Treatment Tailored to You</h3>
+                <p>One size doesn't fit all. We create custom brain stimulation treatments using your unique brain data for better results.</p>
             </div>
         </div>
 
-        <div id="theme-details-container" style="display: none;">
+
         <div class="pub-list" style="margin-top: 2rem;">
             <div class="theme-detail" id="theme-brain-disorders" style="display: none;">
             <h3 style="margin-bottom: 0.75rem; color: #342ed1;">Brain Disorders - Where Heterogeneity is the Lock and AI is the Key</h3>
             <p>Neuropsychiatric disorders are inherently heterogeneous, often presenting as overlapping syndromes driven by multiple risk factors, biological variants, and interacting pathophysiological processes. For example, depression may co-occur with frontotemporal dementia, which itself spans diverse clinical variants including behavioural, semantic, agrammatic, logopenic, and motor forms. This complexity poses significant challenges for accurate diagnosis and the development of targeted therapies.</p>
             <p>Emerging evidence suggests that the brain's network architecture holds critical insights into this heterogeneity. At AI4BNT, we develop linear and nonlinear mathematical models, along with statistically explainable AI frameworks, to identify network-based biomarkers from multimodal brain MRI data.</p>
-            <p><strong>Some of our key works are highlighted below:</strong></p>
+            <p><strong>Some of our key works are highlighted below.</strong></p>
             <ol>
                 <li>Kashyap, R., Ouyang, G., Sommer, W., Zhou, C. (2015). Neuroanatomic localization of priming effects for famous faces with latency corrected event related potentials. <em>Brain Research</em>, 1632, 58-72.</li>
                 <li>Kashyap, R., Bhattacharjee, S., Sommer, W., Zhou, C. (2018). Repetition priming effects for famous faces through dynamic causal modelling of latency-corrected event-related brain potentials. <em>European Journal of Neuroscience</em>, 49(10), 1330-1347.</li>
@@ -417,7 +408,7 @@
             <p>Human life is shaped by daily habits, environmental exposures, trauma, and upbringing. These diverse experiences leave measurable imprints on the brain. At AI4BNT, we investigate these brain signatures using multimodal neuroimaging and advanced AI approaches.</p>
             <p>Our research shows that in adults (above 30 years), distinct brain signatures are associated with lifestyle and behavioral factors such as smoking, alcohol use, substance use, and antisocial behavior. In children and adolescents (below 18 years), these signatures often reflect early-life adversity, including abuse and neglect.</p>
             <p>Our research extends across the lifespan, aiming to understand how these factors influence brain ageing and contribute to the development of cognitive and neuropsychiatric disorders at different stages of life.</p>
-            <p><strong>Some of our key works are highlighted below:</strong></p>
+            <p><strong>Selected works on risk signatures are highlighted below:</strong></p>
             <ol>
                 <li>Kashyap, R., Bhattacharjee, S., Yeo, B.T., Chen, S.A. (2019). Maximizing dissimilarity in resting state detects heterogeneous subtypes in healthy population associated with high substance-use and problems in antisocial personality. <em>Human Brain Mapping</em>, 41(5), 1261-1273.</li>
                 <li>Kashyap, R., Holla, B., Bhattacharjee, S., Sharma, E., Mehta, M.U., Vaidya, N., Bharath, R.D., Murthy, P., Basu, D., Subodh, B.N., Singh, R.L., Lourembam, R., Chakrabarti, A., Kartik, K., Kalyanram, K., Kumaran, K., Krishnaveni, G., Krishna, M., Kuriyan, R., Kurpad, S.S., Desrivieres, S., Purushottam, M., Barker, G.J., Orfanos, P.D., Hickman, M., Heron, J., Toledano, M., Schumann, G., Benegal, V., and cVEDA Consortium (2024). Childhood adversities characterize the heterogeneity in the brain pattern of individuals during neurodevelopment. <em>Psychological Medicine</em>, 113.</li>
@@ -446,7 +437,7 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publications">
+    <section id="publications" style="display: none;">
         <h2 class="section-title">Publications</h2>
         <div class="pub-list">
             
@@ -590,7 +581,7 @@
             <div class="pub-item">
                 <div class="pub-number">16.</div>
                 <div class="pub-content">
-                    <div class="pub-authors">Kashyap, R., Holla, B.; Bhattacharjee, S.; Sharma, E.; Mehta, M.U, Vaidya, N.; Bharath, R.D.; Murthy, P.; Basu, D.; Subodh, B. N.; Singh, R.L.; Lourembam, R.; Chakrabarti, A.; Kartik, K.; Kalyanram, K.; Kumaran, K.; Krishnaveni, G.; Krishna, M.; Kuriyan, R.; Kurpad, S.S.; Desrivières, S.; Purushottam, M.; Barker, G.J; Orfanos, P.D; Hickman, M.; Heron, J; Toledano, M.; Schumann,G.; Benegal, V.; and Consortium on Vulnerability to Externalizing Disorders and Addictions (cVEDA) (2024)</div>
+                    <div class="pub-authors">Kashyap, R., Holla, B.; Bhattacharjee, S.; Sharma, E.; Mehta, M.U, Vaidya, N.; Bharath, R.D.; Murthy, P.; Basu, D.; Subodh, B. N.; Singh, R.L.; Lourembam, R.; Chakrabarti, A.; Kartik, K.; Kalyanram, K.; Kumaran, K.; Krishnaveni, G.; Krishna, M.; Kuriyan, R.; Kurpad, S.S.; DesriviÃ¨res, S.; Purushottam, M.; Barker, G.J; Orfanos, P.D; Hickman, M.; Heron, J; Toledano, M.; Schumann,G.; Benegal, V.; and Consortium on Vulnerability to Externalizing Disorders and Addictions (cVEDA) (2024)</div>
                     <div class="pub-title">Childhood adversities characterize the heterogeneity in the brain pattern of individuals during neurodevelopment</div>
                     <div class="pub-journal">Psychological Medicine, 113 <strong>(Corresponding Author)</strong> - <strong><a href="https://www.psypost.org/new-study-reveals-lasting-impact-of-childhood-adversity-on-brain-development/" target="_blank">Covered by International Media - PsyPost</a></strong></div>
                 </div>
@@ -857,7 +848,7 @@
     </section>
 
     <!-- Software Section -->
-    <section id="software" style="background: white;">
+    <section id="software" style="background: white; display: none;">
         <h2 class="section-title">Software and Tools</h2>
         <div class="content-grid">
             <p><strong>Our lab develops open-source tools for brain network modeling, data visualization, and AI-assisted therapy design. All tools are freely available and can be downloaded from the links below.</strong></p>
@@ -867,12 +858,12 @@
         <h3 style="margin-top: 0.5rem; margin-bottom: 1.5rem; color: #342ed1; text-align: center;">Open Source Softwares Developed</h3>
         
         <div class="research-grid" style="margin-top: 1.5rem;">
-            <div class="research-card" onclick="window.open('https://github.com/suklamaa', '_blank')" style="cursor: pointer;">
+            <div class="research-card" onclick="window.open('https://github.com/TanushreeLogukavi/iSATA_Network', '_blank')" style="cursor: pointer;">
                 <h3>iSATA-Network (2026)</h3>
                 <p><strong>Individual-Systematic Approach for tDCS Analysis - Network Based</strong></p>
                 <p>Created for network-based distribution of stimulation intensity in transcranial direct current stimulation (tDCS) analysis.</p>
                 <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Status: Work in Progress</em></p>
-                <p style="margin-top: 0.75rem;"><a href="https://github.com/suklamaa" target="_blank" style="color: #1e40af; font-weight: bold;">GitHub →</a></p>
+                <p style="margin-top: 0.75rem;"><a href="https://github.com/TanushreeLogukavi/iSATA_Network" target="_blank" style="color: #1e40af; font-weight: bold;">GitHub →</a></p>
             </div>
             
             <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/KWTCWK', '_blank')" style="cursor: pointer;">
@@ -904,13 +895,13 @@
                 <p><strong>Framework for Personalizing Resting-State fMRI Analysis</strong></p>
                 <p>Developed the framework to individualize resting-state fMRI analysis. This approach improves prediction accuracy of behavioral measures from functional connectivity data.</p>
                 <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Referenced in 50+ papers</em></p>
-                <p style="margin-top: 0.75rem;"><a href="https://github.com/suklamaa/Maximizing_Dissimilarity_in_fMRI" target="_blank" style="color: #1e40af; font-weight: bold;">View PDF →</a></p>
+                <p style="margin-top: 0.75rem;"><a href="https://github.com/suklamaa/Maximizing_Dissimilarity_in_fMRI" target="_blank" style="color: #1e40af; font-weight: bold;">GitHub →</a></p>
             </div>
         </div>
     </section>
 
-    <!-- People / Team Section -->
-    <section id="people">
+    <!-- PEOPLE/ Team Section -->
+    <section id="people" style="display: none;">
         <h2 class="section-title">People</h2>
         <div class="team-grid">
             <h3 id="pi-section" class="team-section-header">Principle Investigator</h3>
@@ -938,10 +929,10 @@
                 <div class="pi-sidebar">
                     <div class="pi-slider-wrapper" aria-label="PI image slider">
                         <div class="pi-slider">
-                            <img src="LAB/11.jpg" alt="Principle Investigator image 11">
-                            <img src="LAB/12.jpg" alt="Principle Investigator image 12">
-                            <img src="LAB/13.jpg" alt="Principle Investigator image 13">
-                            <img src="LAB/14.jpg" alt="Principle Investigator image 14">
+                            <img src="LAB/11.jpg" alt="Principal Investigator image 11">
+                            <img src="LAB/12.jpg" alt="Principal Investigator image 12">
+                            <img src="LAB/13.jpg" alt="Principal Investigator image 13">
+                            <img src="LAB/14.jpg" alt="Principal Investigator image 14">
                         </div>
                     </div>
                     
@@ -1054,10 +1045,10 @@
                 <div class="pub-item">
                     
                     <div class="pub-content">
-                        <div class="pub-authors" style="font-size: 1.1rem; font-weight: bold; color: var(--primary-color);">Sureeti Sur</div>
+                        <div class="pub-authors" style="font-size: 1.1rem; font-weight: bold; color: var(--primary-color);">Susreeti Sur</div>
                         <div class="pub-title">Research Scholar</div>
                         <div class="pub-journal" style="margin-bottom: 0.5rem;">University of North Bengal, WB</div>
-                        <p style="text-align: justify; color: var(--text-light); font-size: 0.95rem;">Sureeti Sur a research scholar in Department of Computer Science and Technology, University of North Bengal, WB working on the application of Artificial Intelligence in neuroscience, MRI thermometry, and medical image processing. She learned FMRI techniques during her internship in our lab.</p>
+                        <p style="text-align: justify; color: var(--text-light); font-size: 0.95rem;">Susreeti Sur is a research scholar in Department of Computer Science and Technology, University of North Bengal, WB working on the application of Artificial Intelligence in neuroscience, MRI thermometry, and medical image processing. She learned FMRI techniques during her internship in our lab.</p>
                     </div>
                 </div>
             </div>
@@ -1065,7 +1056,7 @@
     </section>
 
     <!-- News Section -->
-    <section id="news" style="background: white;">
+    <section id="news" style="background: white; display: none;">
         <h2 class="section-title">News </h2>
         <div class="content-grid">
             <h3>Recent Recognitions</h3>
@@ -1081,7 +1072,7 @@
         </div>
     </section>
 
-   <section id="contact">
+   <section id="contact" style="display: none;">
     <h2 class="section-title">Contact & Collaboration</h2>
     <p style="text-align:center; max-width: 780px; margin: 0 auto 0.5rem; color: rgba(255,255,255,0.9);">
         Submit your collaboration request here. Messages will be sent to the lab owner via Formspree.
@@ -1134,7 +1125,7 @@
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#about">About</a>
+                <a href="index.html#about">About</a>
                 <a href="#research">Research Themes</a>
                 <a href="#projects">Projects</a>
                 <a href="#publications">Publications</a>
@@ -1142,7 +1133,7 @@
             
             <div class="footer-section">
                 <h4>People</h4>
-                <a href="#pi-section">Principle Investigator</a>
+                <a href="#pi-section">Principal Investigator</a>
                 <a href="#research-fellows-section">Research Fellows</a>
                 <a href="#doctoral-fellows-section">Doctoral Fellows</a>
                 <a href="#research-interns-section">Research Interns</a>
@@ -1154,34 +1145,9 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="scroll-to-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+    <button class="scroll-to-top" id="scrollTopBtn" onclick="scrollToTop()">â†‘</button>
 
-    <script>
-        (function () {
-            var links = document.querySelectorAll('.theme-link');
-            var container = document.getElementById('theme-details-container');
-            var details = document.querySelectorAll('.theme-detail');
 
-            function showTheme(themeId) {
-                details.forEach(function (item) {
-                    item.style.display = item.id === themeId ? 'block' : 'none';
-                });
-                container.style.display = 'block';
-                var active = document.getElementById(themeId);
-                if (active) {
-                    active.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
-
-            links.forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var themeId = this.getAttribute('data-theme');
-                    showTheme(themeId);
-                });
-            });
-        })();
-    </script>
 
     <script>
         function scrollToSection(value) {
@@ -1211,6 +1177,45 @@
                 peopleDropdown.classList.remove('show');
             }
         });
+    <script>
+        function showSection(event, sectionId) {
+            alert('showSection called with ' + sectionId);
+            event.preventDefault();
+            // Hide all sections
+            const sections = ['home-text', 'about', 'career', 'research', 'publications', 'software', 'people', 'news', 'contact'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = 'none';
+                }
+            });
+            // Show the selected section
+            if (sectionId === 'home') {
+                document.getElementById('home-text').style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    // Scroll with header offset
+                    const headerOffset = 60;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Show home-text on load, hide others
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = ['home-text', 'about', 'career', 'research', 'publications', 'software', 'people', 'news', 'contact'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = id === 'home-text' ? 'block' : 'none';
+                }
+            });
+        });
     </script>
 
     <!-- JavaScript Files -->
@@ -1222,3 +1227,4 @@
     <script src="js/slider.js"></script>
 </body>
 </html>
+
