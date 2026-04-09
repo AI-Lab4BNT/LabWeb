@@ -7,6 +7,10 @@ function initSlider() {
     const images = document.querySelectorAll('.slider-image');
     const dotsContainer = document.getElementById('sliderDots');
     initPiSlider();
+
+    if (!images.length || !dotsContainer) {
+        return;
+    }
     
     // Create dots for each image
     images.forEach((_, index) => {

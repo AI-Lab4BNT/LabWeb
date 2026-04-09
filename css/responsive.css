@@ -97,6 +97,10 @@
 }
 
 @media (max-width: 768px) {
+    :root {
+        --header-offset: 96px;
+    }
+
     .hero {
         padding-top: 150px;
     }

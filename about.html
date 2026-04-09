@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AI4BNT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo"><img src="LAB/AI4BNT.png" alt="AI4BNT Logo" class="logo-img">AI LAB FOR NETWORK THERAPEUTICS</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li><li><a href="career.html">CAREER</a></li>
+                <li><a href="research.html">RESEARCH</a></li>
+                <li><a href="publications.html">PUBLICATION</a></li>
+                <li><a href="software.html">SOFTWARE</a></li>
+                <li class="dropdown">
+                    <a href="people.html" onclick="togglePeopleDropdown(event)">PEOPLE</a>
+                    <div class="dropdown-content" id="peopleNavDropdown">
+                        <div class="people-nav-section">
+                            <a href="people.html#pi-section">Principle Investigator</a>
+                            <a href="people.html#research-fellows-section">Research Fellows</a>
+                            <a href="people.html#doctoral-fellows-section">Doctoral Fellows</a>
+                            <a href="people.html#research-interns-section">Research Interns</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </nav>
+</header>
+
+<section id="about">
+    <h2 class="section-title">About Our Lab</h2>
+    <div class="about-grid">
+        <div class="about-content">
+            <h3>Pillars of Lab</h3>
+            <p>
+                The Artificial Intelligence Lab for Brain Network Therapeutics (AI4BNT) is dedicated to advancing the understanding and treatment of neuropsychiatric disorders through cutting-edge artificial intelligence and machine learning.
+            </p>
+            <p>
+                At the core of our approach is a simple belief: progress demands resilience. We embrace failure as an essential part of discovery. In our lab, ideas are conceptualized, models are built, experiments are rigorously tested, and setbacks are not endpoints but lessons. We learn, refine, and persist until we succeed.
+            </p>
+            <p>
+                We believe that success is not the opposite of failure, but the result of perseverance through it.
+            </p>
+            <p>
+                If you share this mindset, we welcome you to <a href="career.html">join us</a>.
+            </p>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; height: 50vh; background: transparent; padding: 0; margin: 0; width: 100%; overflow: visible;">
+            <style>
+                .pillar-container-new svg {
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 100%;
+                    height: 100%;
+                    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8));
+                }
+
+                .pillar-container-new {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: visible;
+                }
+
+                .pillar-container-new .pillar-circle {
+                    fill-opacity: 0.95;
+                    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+                    transition: filter 0.3s ease;
+                    cursor: pointer;
+                }
+
+                .pillar-container-new .pillar-circle:hover {
+                    filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.3));
+                }
+
+                .pillar-container-new .pillar-text {
+                    font-size: 48px !important;
+                    font-weight: 900;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    fill: black;
+                    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+                    dominant-baseline: middle;
+                    text-anchor: middle;
+                    pointer-events: none;
+                    textLength: 420;
+                    lengthAdjust: spacingAndGlyphs;
+                }
+
+                .pillar-container-new .pillar-text tspan {
+                    font-size: inherit !important;
+                }
+
+                .pillar-container-new .center-label {
+                    font-size: 120px;
+                    font-weight: 900;
+                    letter-spacing: 0.15em;
+                    fill: black;
+                    text-anchor: middle;
+                    dominant-baseline: middle;
+                }
+
+                .pillar-group-0 {
+                  animation: popPillar 3.5s ease-in-out infinite;
+                  animation-delay: 0s;
+                  transform-origin: 500px 30px;
+                }
+
+                .pillar-group-1 {
+                  animation: popPillar 3.5s ease-in-out infinite;
+                  animation-delay: 0.8s;
+                  transform-origin: 970px 500px;
+                }
+
+                .pillar-group-2 {
+                  animation: popPillar 3.5s ease-in-out infinite;
+                  animation-delay: 1.6s;
+                  transform-origin: 500px 970px;
+                }
+
+                .pillar-group-3 {
+                  animation: popPillar 3.5s ease-in-out infinite;
+                  animation-delay: 2.4s;
+                  transform-origin: 30px 500px;
+                }
+
+                .arrows-group {
+                  animation: rotateArrows 20s linear infinite;
+                  transform-origin: 500px 500px;
+                }
+
+                @keyframes popPillar {
+                  0% {
+                    transform: scale(0);
+                    opacity: 0;
+                  }
+                  50% {
+                    transform: scale(1.15);
+                  }
+                  100% {
+                    transform: scale(1);
+                    opacity: 1;
+                  }
+                }
+
+                @keyframes rotateArrows {
+                  0% {
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    transform: rotate(360deg);
+                  }
+                }
+            </style>
+            <div class="pillar-container-new">
+                <svg viewBox="-250 -250 1500 1500" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" style="display: block;">
+                    <defs>
+                        <marker id="arrowheadNew" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="rgba(255, 255, 255, 0.5)" />
+                        </marker>
+
+                        <radialGradient id="pillarGrad0New">
+                            <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+                        </radialGradient>
+                        <radialGradient id="pillarGrad1New">
+                            <stop offset="0%" style="stop-color:#fdba74;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+                        </radialGradient>
+                        <radialGradient id="pillarGrad2New">
+                            <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a16207;stop-opacity:1" />
+                        </radialGradient>
+                        <radialGradient id="pillarGrad3New">
+                            <stop offset="0%" style="stop-color:#86efac;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#166534;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+
+                    <g class="pillar-group-0">
+                        <circle cx="500" cy="30" r="210" fill="url(#pillarGrad0New)" class="pillar-circle"/>
+                        <text x="500" y="30" class="pillar-text">
+                            <tspan x="500" dy="-0.35em">CONCEPTUALIZE</tspan>
+                        </text>
+                    </g>
+
+                    <g class="pillar-group-1">
+                        <circle cx="970" cy="500" r="210" fill="url(#pillarGrad1New)" class="pillar-circle"/>
+                        <text x="970" y="500" class="pillar-text">
+                            <tspan x="970" dy="-0.35em">EXPERIMENT</tspan>
+                        </text>
+                    </g>
+
+                    <g class="pillar-group-2">
+                        <circle cx="500" cy="970" r="210" fill="url(#pillarGrad2New)" class="pillar-circle"/>
+                        <text x="500" y="970" class="pillar-text">
+                            <tspan x="500" dy="-0.35em">RE-LEARN</tspan>
+                            <tspan x="500" dy="1.3em">RE-TRY</tspan>
+                        </text>
+                    </g>
+
+                    <g class="pillar-group-3">
+                        <circle cx="30" cy="500" r="210" fill="url(#pillarGrad3New)" class="pillar-circle"/>
+                        <text x="30" y="500" class="pillar-text" textLength="420" lengthAdjust="spacingAndGlyphs">
+                            <tspan x="30" dy="0" style="font-size: 80px !important;">SUCCESS</tspan>
+                            <tspan x="30" dy="1.3em" style="font-size: 80px !important;">FAIL</tspan>
+                        </text>
+                    </g>
+
+                    <g class="arrows-group" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2" fill="none" stroke-dasharray="4,4">
+                        <path d="M 600 120 Q 750 250 880 380" marker-end="url(#arrowheadNew)"/>
+                        <path d="M 880 620 Q 750 750 600 880" marker-end="url(#arrowheadNew)"/>
+                        <path d="M 400 880 Q 250 750 120 620" marker-end="url(#arrowheadNew)"/>
+                        <path d="M 120 380 Q 250 250 400 120" marker-end="url(#arrowheadNew)"/>
+                    </g>
+
+                    <circle cx="500" cy="500" r="430" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                    <circle cx="500" cy="500" r="390" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+                    <text x="500" y="480" class="center-label" fill="black">Pillars</text>
+                    <text x="500" y="560" style="font-size: 52px; font-weight: 700; letter-spacing: 0.08em; fill: black; text-anchor: middle; dominant-baseline: middle;">of AI4BNT</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>AI4BNT</h3>
+            <p>Artificial Intelligence Lab for Brain Network Therapeutics</p>
+            <p>Department of Neuroimaging and Interventional Radiology, NIMHANS, Bangalore</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul><li><a href="career.html">Career</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:ai-lab4bnt@gmail.com">ai-lab4bnt@gmail.com</a></p>
+            <p>Location: NIMHANS, Bangalore, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 AI4BNT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/slider.js"></script>
+
+</body>
+</html>
+
+
+

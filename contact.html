@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AI4BNT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo"><img src="LAB/AI4BNT.png" alt="AI4BNT Logo" class="logo-img">AI LAB FOR NETWORK THERAPEUTICS</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li><li><a href="career.html">CAREER</a></li>
+                <li><a href="research.html">RESEARCH</a></li>
+                <li><a href="publications.html">PUBLICATION</a></li>
+                <li><a href="software.html">SOFTWARE</a></li>
+                <li class="dropdown">
+                    <a href="people.html" onclick="togglePeopleDropdown(event)">PEOPLE</a>
+                    <div class="dropdown-content" id="peopleNavDropdown">
+                        <div class="people-nav-section">
+                            <a href="people.html#pi-section">Principle Investigator</a>
+                            <a href="people.html#research-fellows-section">Research Fellows</a>
+                            <a href="people.html#doctoral-fellows-section">Doctoral Fellows</a>
+                            <a href="people.html#research-interns-section">Research Interns</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="contact">
+    <h2 class="section-title">Contact & Collaboration</h2>
+    <p style="text-align:center; max-width: 780px; margin: 0 auto 0.5rem; color: rgba(255,255,255,0.9);">
+        Submit your collaboration request here. Messages will be sent to the lab owner via Formspree.
+    </p>
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-text">
+                    <h4>Email</h4>
+                    <p><a href="mailto:ai-lab4bnt@gmail.com" style="color: white;">ai-lab4bnt@gmail.com</a><br>For career inquiries and collaboration requests</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                    <h4>Location</h4>
+                    <p>Department of Neuroimaging and Interventional Radiology<br>NIMHANS, Bangalore<br>India</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form action="https://formspree.io/f/xbdpzdnr" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>AI4BNT</h3>
+            <p>Artificial Intelligence Lab for Brain Network Therapeutics</p>
+            <p>Department of Neuroimaging and Interventional Radiology, NIMHANS, Bangalore</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul><li><a href="career.html">Career</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:ai-lab4bnt@gmail.com">ai-lab4bnt@gmail.com</a></p>
+            <p>Location: NIMHANS, Bangalore, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 AI4BNT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+
+</body>
+</html>
+
+
+

@@ -41,14 +41,5 @@ function scrollToTop() {
 
 // Initialize CTA buttons with smooth scroll
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            if (this.getAttribute('onclick')) {
-                const href = this.getAttribute('onclick').match(/'([^']+)'/)?.[1];
-                if (href) {
-                    smoothScroll({ target: { getAttribute: () => href } });
-                }
-            }
-        });
-    });
+    // Removed conflicting event listener
 });

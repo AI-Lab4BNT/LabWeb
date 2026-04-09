@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software - AI4BNT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo"><img src="LAB/AI4BNT.png" alt="AI4BNT Logo" class="logo-img">AI LAB FOR NETWORK THERAPEUTICS</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li><li><a href="career.html">CAREER</a></li>
+                <li><a href="research.html">RESEARCH</a></li>
+                <li><a href="publications.html">PUBLICATION</a></li>
+                <li><a href="software.html">SOFTWARE</a></li>
+                <li class="dropdown">
+                    <a href="people.html" onclick="togglePeopleDropdown(event)">PEOPLE</a>
+                    <div class="dropdown-content" id="peopleNavDropdown">
+                        <div class="people-nav-section">
+                            <a href="people.html#pi-section">Principle Investigator</a>
+                            <a href="people.html#research-fellows-section">Research Fellows</a>
+                            <a href="people.html#doctoral-fellows-section">Doctoral Fellows</a>
+                            <a href="people.html#research-interns-section">Research Interns</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </nav>
+</header>
+
+<!-- Software Section -->
+<section id="software" style="background: white;">
+    <h2 class="section-title">Software and Tools</h2>
+    <div class="content-grid">
+        <p><strong>Our lab develops open-source tools for brain network modeling, data visualization, and AI-assisted therapy design. All tools are freely available and can be downloaded from the links below.</strong></p>
+        <p>Visit our <a href="https://github.com/suklamaa" target="_blank"><strong>GitHub Repository</strong></a> for more details and to access all our open-source tools and resources.</p>
+    </div>
+    
+    <h3 style="margin-top: 0.5rem; margin-bottom: 1.5rem; color: #342ed1; text-align: center;">Open Source Softwares Developed</h3>
+    
+    <div class="research-grid" style="margin-top: 1.5rem;">
+        <div class="research-card" onclick="window.open('https://github.com/TanushreeLogukavi/iSATA_Network', '_blank')" style="cursor: pointer;">
+            <h3>iSATA-Network (2026)</h3>
+            <p><strong>Individual-Systematic Approach for tDCS Analysis - Network Based</strong></p>
+            <p>Created for network-based distribution of stimulation intensity in transcranial direct current stimulation (tDCS) analysis.</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Status: Work in Progress</em></p>
+            <p style="margin-top: 0.75rem;"><a class="software-link" href="https://github.com/TanushreeLogukavi/iSATA_Network" target="_blank">GitHub →</a></p>
+        </div>
+        
+        <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/KWTCWK', '_blank')" style="cursor: pointer;">
+            <h3>iSATA-MNI (2022)</h3>
+            <p><strong>Individual-Systematic Approach for tDCS Analysis - MNI Atlas</strong></p>
+            <p>Open-source software that aids tDCS montage selection for individual head models/subjects using the AAL (Automated Anatomical Labeling) Atlas.</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: 100+ times</strong></p>
+            <p style="margin-top: 0.75rem;"><a class="software-link" href="https://doi.org/10.21979/N9/KWTCWK" target="_blank">Download →</a></p>
+        </div>
+        
+        <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/5W3RIM', '_blank')" style="cursor: pointer;">
+            <h3>iSATA (2021)</h3>
+            <p><strong>Individual-Systematic Approach for tDCS Analysis - Talairach</strong></p>
+            <p>Open-source software for tDCS montage selection for individual head models/subjects using the Talairach Atlas. Provides personalized transcranial direct current stimulation analysis.</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: >1500 times - Highest Downloaded Toolbox</strong></p>
+            <p style="margin-top: 0.75rem;"><a class="software-link" href="https://doi.org/10.21979/N9/5W3RIM" target="_blank">Download →</a></p>
+        </div>
+        
+        <div class="research-card" onclick="window.open('https://doi.org/10.21979/N9/DMWPZK', '_blank')" style="cursor: pointer;">
+            <h3>SATA (2020)</h3>
+            <p><strong>Systematic Approach for tDCS Analysis - Standard MNI</strong></p>
+            <p>Open-source software for tDCS montage selection for standard MNI brain head models. Enables systematic analysis of transcranial direct current stimulation parameters.</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><strong>Downloads: >700 times</strong></p>
+            <p style="margin-top: 0.75rem;"><a class="software-link" href="https://doi.org/10.21979/N9/DMWPZK" target="_blank">Download →</a></p>
+        </div>
+        
+        <div class="research-card" onclick="window.open('https://github.com/suklamaa/Maximizing_Dissimilarity_in_fMRI', '_blank')" style="cursor: pointer;">
+            <h3>Individual-Specific fMRI Subspace (2019)</h3>
+            <p><strong>Framework for Personalizing Resting-State fMRI Analysis</strong></p>
+            <p>Developed the framework to individualize resting-state fMRI analysis. This approach improves prediction accuracy of behavioral measures from functional connectivity data.</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>Referenced in 50+ papers</em></p>
+            <p style="margin-top: 0.75rem;"><a class="software-link" href="https://github.com/suklamaa/Maximizing_Dissimilarity_in_fMRI" target="_blank">GitHub →</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>AI4BNT</h3>
+            <p>Artificial Intelligence Lab for Brain Network Therapeutics</p>
+            <p>Department of Neuroimaging and Interventional Radiology, NIMHANS, Bangalore</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul><li><a href="career.html">Career</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:ai-lab4bnt@gmail.com">ai-lab4bnt@gmail.com</a></p>
+            <p>Location: NIMHANS, Bangalore, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 AI4BNT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+
+</body>
+</html>
+
+
+
