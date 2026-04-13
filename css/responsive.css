@@ -134,7 +134,6 @@
     .about-grid,
     .contact-wrapper {
         grid-template-columns: 1fr;
-        max-width: 100%;
     }
 
     .project-item,
