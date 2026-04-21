@@ -197,6 +197,10 @@
         letter-spacing: 0.015em;
     }
 
+    .storyline-break {
+        display: block;
+    }
+
     .slider-controls {
         bottom: 30px;
     }
