@@ -170,8 +170,8 @@
     }
 
     .hero {
-        padding: 58px 0.75rem 6px;
-        min-height: 340px;
+        padding: 0 0.75rem 4px;
+        min-height: 300px;
     }
 
     .hero h1 {
@@ -187,7 +187,7 @@
     }
 
     .storyline-strip {
-        padding: 0.15rem 0.75rem 0.05rem;
+        padding: 0.05rem 0.75rem 0;
     }
 
     .storyline-strip p {
@@ -271,7 +271,7 @@
     }
 
     #home-text {
-        padding-top: 10px;
+        padding-top: 4px;
     }
 
     .section-title {
