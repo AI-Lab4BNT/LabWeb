@@ -170,7 +170,8 @@
     }
 
     .hero {
-        padding-top: 150px;
+        padding: 112px 1rem 22px;
+        min-height: 430px;
     }
 
     .hero h1 {
@@ -186,7 +187,7 @@
     }
 
     .storyline-strip {
-        padding: 0.5rem 0.75rem 0.4rem;
+        padding: 0.45rem 0.75rem 0.3rem;
     }
 
     .storyline-strip p {
@@ -197,7 +198,7 @@
         letter-spacing: 0.015em;
     }
 
-    .storyline-break {
+    .storyline-mobile-break {
         display: block;
     }
 
@@ -266,7 +267,7 @@
     }
 
     section {
-        padding: 60px 1.5rem;
+        padding: 34px 1rem;
     }
 
     .section-title {
