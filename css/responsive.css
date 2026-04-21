@@ -185,6 +185,18 @@
         font-size: 1rem;
     }
 
+    .storyline-strip {
+        padding: 0.5rem 0.75rem 0.4rem;
+    }
+
+    .storyline-strip p {
+        white-space: normal;
+        max-width: min(92vw, 24rem);
+        font-size: clamp(0.95rem, 4.2vw, 1.2rem);
+        line-height: 1.25;
+        letter-spacing: 0.015em;
+    }
+
     .slider-controls {
         bottom: 30px;
     }
