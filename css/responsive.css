@@ -174,21 +174,6 @@
         min-height: 300px;
     }
 
-    .slider-slide-split,
-    .slider-slide-pair {
-        display: flex;
-        height: 100%;
-    }
-
-    .slider-slide-split .slider-split-image,
-    .slider-slide-pair .slider-split-image,
-    .slider-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
     .hero h1 {
         font-size: 2rem;
     }
