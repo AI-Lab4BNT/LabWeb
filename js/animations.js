@@ -85,9 +85,15 @@ function setResearchThemeDetail(theme, activeCard) {
     ].join('');
     detail.dataset.theme = theme;
     detail.classList.add('is-visible');
+    detail.setAttribute('tabindex', '-1');
     detail.style.animation = 'none';
     void detail.offsetWidth;
     detail.style.animation = 'researchThemePop 180ms ease-out';
+    window.requestAnimationFrame(() => {
+        const targetTop = Math.max(detail.getBoundingClientRect().top + window.scrollY - 88, 0);
+        window.scrollTo({ top: targetTop, behavior: 'auto' });
+        detail.focus({ preventScroll: true });
+    });
 }
 
 // Intersection Observer for scroll animations
