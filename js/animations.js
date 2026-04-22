@@ -1,10 +1,5 @@
 // ============= ANIMATIONS & SCROLL EFFECTS ============= 
 
-// Toggle Research Cards
-function toggleCard(card) {
-    card.classList.toggle('active');
-}
-
 function setResearchThemeDetail(theme, activeCard) {
     const detail = document.getElementById('researchThemeDetail');
     const title = document.getElementById('researchThemeTitle');
