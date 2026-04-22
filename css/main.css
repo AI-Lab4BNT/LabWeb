@@ -2770,6 +2770,9 @@ footer {
     transition: all 0.3s ease;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .scroll-to-top:hover {
