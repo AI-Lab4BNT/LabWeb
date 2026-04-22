@@ -170,8 +170,15 @@
     }
 
     .hero {
-        padding: 0 0.75rem 4px;
-        min-height: 300px;
+        padding: 0 0.5rem 0 !important;
+        min-height: 260px !important;
+    }
+
+    .hero .slider-image,
+    .hero .slider-slide-split .slider-split-image,
+    .hero .slider-slide-pair .slider-split-image {
+        object-fit: cover !important;
+        object-position: center center;
     }
 
     .hero h1 {
@@ -187,7 +194,7 @@
     }
 
     .storyline-strip {
-        padding: 0.05rem 0.75rem 0;
+        padding: 0 0.75rem 0;
     }
 
     .storyline-strip p {
@@ -203,7 +210,7 @@
     }
 
     .slider-controls {
-        bottom: 30px;
+        bottom: 24px;
     }
 
     .slider-btn {
@@ -213,7 +220,11 @@
     }
 
     .slider-dots {
-        bottom: 10px;
+        bottom: 6px;
+    }
+
+    #home-text {
+        padding-top: 0;
     }
 
     .about-grid,
@@ -271,7 +282,7 @@
     }
 
     #home-text {
-        padding-top: 4px;
+        padding-top: 0;
     }
 
     .section-title {
